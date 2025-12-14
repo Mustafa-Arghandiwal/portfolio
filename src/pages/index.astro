@@ -1,7 +1,6 @@
 ---
 import "../styles/global.css";
 import HeroText from "../components/HeroText";
-import { TextEffect } from "../../components/motion-primitives/text-effect";
 ---
 
 <html lang="en">
@@ -12,65 +11,37 @@ import { TextEffect } from "../../components/motion-primitives/text-effect";
 		<meta name="generator" content={Astro.generator} />
 		<title>Astro</title>
 	</head>
-	<body class="bg-black h-screen text-gray-200 overflow-hidden font-expo">
-		<img
-			class="absolute top-0 right-0 -z-10 opacity-50"
-			src="/gradient.png"
-			alt="gradient"
-		/>
-		<img
-			class="absolute bottom-0 right-[25%] -z-10"
-			src="/gradient.png"
-			alt="gradient"
-		/>
-		<div
-			class="h-0 w-120 absolute right-0 top-[20%] shadow-[0_0_700px_15px_white] rotate-130"
-		>
-		</div>
-		<div
-			class="h-0 w-120 absolute bottom-70 right-[25%] shadow-[0_0_400px_30px_#1100F8] rotate-120"
-		>
-		</div>
-		<!-- <div -->
-		<!-- 	class="h-0 w-120 absolute top-0 right-[40%] shadow-[0_0_400px_30px_#1100F8] rotate-120" -->
-		<!-- > -->
-		<!-- </div> -->
+	<body class="bg-black  text-gray-200  font-expo px-4 py-8">
 
-		<!-- containder -->
-		<header
-			class="relative border-[0.5px] border-gray-900 flex z-60 py-4 max-w-96 mt-8 mx-auto rounded-full justify-center items-center"
+		<img class="absolute top-0 right-0 -z-10 opacity-50" src="/gradient.png" alt="gradient"/>
+		<img class="absolute bottom-0 right-[25%] -z-10" src="/gradient.png"alt="gradient" />
+		<div class="h-0 w-120 absolute right-0 top-[20%] shadow-[0_0_700px_15px_white] rotate-130" >
+		</div>
+		<div class="h-0 w-120 absolute bottom-70 right-[25%] shadow-[0_0_400px_30px_#1100F8] rotate-120">
+		</div>
+		<header class="relative border-[0.5px] border-gray-900 flex z-60 py-4 max-w-96  mx-auto rounded-full justify-center items-center"
 		>
-			<div
-				class="z-0 absolute inset-0 backdrop-blur-lg rounded-full"
-			>
+			<div class="z-0 absolute inset-0 backdrop-blur-sm rounded-full">
 			</div>
 			<div class="z-10 flex gap-8 justify-center">
-				<a class="cursor-pointer font-bold" href="#"
-					>Projects</a
-				>
-				<a href="#">Blog</a>
-				<a href="#">Contact me</a>
+				<a class="cursor-pointer hover:opacity-80 font-semibold hover:text-[#DB5413] duration-75" href="#" >Projects</a >
+				<a class="cursor-pointer hover:opacity-80 font-semibold hover:text-[#DB5413] duration-75" href="#">Blog</a>
+				<a class="cursor-pointer hover:opacity-80 font-semibold hover:text-[#DB5413] duration-75" href="#">Contact</a>
 			</div>
 		</header>
 		<div class="">
-			<div class="mt-[20vh] pl-16 max-w-180">
-				<HeroText client:load />
-			</div>
 			<spline-viewer
 				class="absolute inset-0"
 				loading-anim-type="spinner-big-light"
 				url="https://prod.spline.design/iMSUF9MZcV2mm9gU/scene.splinecode"
 			></spline-viewer>
-			<div
-				class="w-40 h-10 absolute bottom-4 right-5 bg-black z-50"
-			>
+			<div class="mt-[60vh] big-tablet:mt-[20vh] big-tablet:pl-16 max-w-180 ">
+				<HeroText client:load />
+			</div>
+			<div class="w-40 h-10 absolute bottom-4 right-5 bg-black z-50" >
 			</div>
 		</div>
-
-		<script
-			is:inline
-			type="module"
-			src="https://unpkg.com/@splinetool/viewer@1.12.6/build/spline-viewer.js"
-		></script>
+		
+		<script is:inline type="module" src="https://unpkg.com/@splinetool/viewer@1.12.6/build/spline-viewer.js" ></script>
 	</body>
 </html>
