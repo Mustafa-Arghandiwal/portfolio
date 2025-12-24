@@ -1,14 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@400..900&display=swap');
+
+
+
+
+@font-face {
+	font-family: "Reospec";
+	/* font-style: normal; */
+	/* font-weight: 200 700; */
+	/* font-display: swap; */
+	src: url("/fonts/Reospec.otf");
+}
+
 @import "tailwindcss";
 
 @theme {
 	--font-orbitron: "Orbitron", sans-serif;
 	--font-expo: "Exo 2", sans-serif;
+	--font-reospec: "Reospec", sans-serif;
 	--breakpoint-big-tablet: 1000px;
 	--breakpoint-xs: 340px;
 
 }
+
 
 /* * { */
 /* 	padding: 0; */
