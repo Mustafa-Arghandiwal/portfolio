@@ -1,7 +1,7 @@
 ---
 title: 'First Blog'
 description: 'This is first blog description text This is first blog description text This is first blog description text This is first blog description text'
-pubDate: 'Dec 22 2025'
+pubDate: 'Dec 22 2026'
 tags: ['first', 'webdev', 'workflow']
 image: '../../assets/arch-logo.png'
 ---

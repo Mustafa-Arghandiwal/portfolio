@@ -14,19 +14,22 @@ console.log(allBlogs[0].data.tags);
 ---
 
 <Layout>
-	<h1 class="text-7xl text-center">My Blog</h1>
+	<h1 class="text-5xl sm:text-7xl text-center">My Blog</h1>
+	<p class="mx-auto text-center mt-6 text-lg opacity-60 max-w-96 ">Short reads on what I am building, breaking, and figuring out along the way.</p>
 
-	<section class="w-[1200px] mx-auto flex flex-wrap gap-8 mt-12">
+	<section class=" max-w-[1200px] mx-auto grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-x-8 gap-y-12 mt-12">
 		{
-			allBlogs.map((blog) => (
-				<div class="w-[calc(50%-2rem)]  rounded-md ">
-					<div class="relative overflow-hidden  h-[75%]">
+		allBlogs.map((blog, index) => (
+		<div class=`rounded-md ${index===0 && "sm:col-span-2 xl:col-span-3 sm:w-[75%]  sm:mx-auto"} overflow-hidden group`>
+			<a href={`/blog/${blog.id}`} class="cursor-pointer relative  block overflow-hidden ">
+				{blog.data.image && 
 						<Image
 							src={blog.data.image}
 							alt="blog image"
-							class="rounded-md h-full  hover:scale-110 duration-300 "
+					class=`rounded-md ${index===0 ? "h-56 sm:h-96" : "h-56"} object-cover hover:scale-110 duration-300 `
 						/>
-						<div class="absolute w-full bottom-0 h-12  backdrop-blur-xs flex items-center justify-between px-4 text-sm font-bold">
+				}
+						<div class="absolute w-full bottom-0 h-10 backdrop-blur-xs flex flex-wrap items-center justify-between px-4 text-sm font-semibold">
 							<FormattedDate
 								date={
 									blog
@@ -38,7 +41,7 @@ console.log(allBlogs[0].data.tags);
 							<div class="flex items-center gap-1.5">
 								<Icon
 									name="lucide:clock-4"
-									class="w-5 h-5 transition-transform group-hover:-translate-y-1 duration-150"
+									class="w-5 h-5"
 								/>
 								{blog.body &&
 									getReadingTime(
@@ -46,21 +49,24 @@ console.log(allBlogs[0].data.tags);
 									)}
 							</div>
 						</div>
-					</div>
+					</a>
 
 			<div class="px-2">
 
-					<ul class="flex gap-2 mt-2 text-xs">
+					<ul class="flex flex-wrap gap-2 mt-2 text-xs">
 						{blog.data.tags.map((tag) => (
-							<li class="border rounded-sm px-1.5 font-light uppercase bg-[#1dd3ff] text-black">
+							<li class="px-2 py-0.5 text-[11px] uppercase tracking-wide
+           rounded-md border border-white/10
+           bg-white/5 text-white/70
+           hover:bg-white/10 hover:text-white transition">
 								{tag}
 							</li>
 						))}
 					</ul>
-					<h3 class="text-xl mt-3 line-clamp-1">
+				<h3 class=`${index===0 && "sm:text-4xl"} opacity-90 group-hover:opacity-100 duration-200 text-2xl mt-1 line-clamp-2 `>
 						{blog.data.title}
 					</h3>
-					<p class="mt-2 text-sm line-clamp-2">{blog.data.description}</p>
+					<p class="mt-1 line-clamp-3 opacity-70 group-hover:opacity-100 duration-200">{blog.data.description}</p>
 			</div>
 				</div>
 			))

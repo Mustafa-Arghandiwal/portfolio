@@ -1,6 +1,6 @@
 ---
 title: 'First Blog'
-description: 'This is first blog description text This is first blog description text This is first blog description text This is first blog description text'
+description: 'No special description'
 pubDate: 'Dec 22 2025'
 tags: ['first', 'webdev', 'workflow']
 image: '../../assets/arcane2.jpg'

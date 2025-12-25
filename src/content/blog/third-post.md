@@ -1,5 +1,5 @@
 ---
-title: 'First Blog'
+title: 'Stop Alt + Tabbing, Do this instead!'
 description: 'This is first blog description text This is first blog description text This is first blog description text This is first blog description text'
 pubDate: 'Dec 22 2025'
 tags: ['first', 'webdev', 'workflow']
