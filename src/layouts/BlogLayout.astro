@@ -12,6 +12,53 @@ const { title, description, pubDate, updatedDate, image, tags, readingTime } =
 	Astro.props as BlogLayoutProps;
 ---
 
+<script>
+	let copyButtonLabel = "Copy Code";
+	const codeBlocks = Array.from(
+		document.querySelectorAll<HTMLPreElement>("pre"),
+	);
+
+	for (const codeBlock of codeBlocks) {
+		const parent = codeBlock.parentNode;
+		if (!parent) continue; // ✅ avoid null parentNode
+
+		const wrapper = document.createElement("div");
+		wrapper.style.position = "relative";
+
+		const copyButton = document.createElement("button");
+		copyButton.className = "copy-code";
+		copyButton.innerHTML = copyButtonLabel;
+
+		codeBlock.setAttribute("tabindex", "0");
+
+		// wrap code block with relative parent element
+		parent.insertBefore(wrapper, codeBlock);
+		wrapper.appendChild(codeBlock);
+		codeBlock.appendChild(copyButton);
+
+		copyButton.addEventListener("click", async () => {
+			await copyCode(codeBlock, copyButton);
+		});
+	}
+
+	async function copyCode(
+		block: HTMLPreElement,
+		button: HTMLButtonElement,
+	) {
+		const code = block.querySelector<HTMLElement>("code");
+		if (!code) return;
+
+		const text = code.innerText;
+		await navigator.clipboard.writeText(text);
+
+		// visual feedback
+		button.innerText = "Copied";
+		setTimeout(() => {
+			button.innerText = copyButtonLabel;
+		}, 1500);
+	}
+</script>
+
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
@@ -68,7 +115,7 @@ const { title, description, pubDate, updatedDate, image, tags, readingTime } =
 		</header>
 
 		<!-- Main content -->
-		<main class="py-24 font-expo px-72">
+		<main class="py-24 font-expo px:4 px-96">
 			<article>
 				<ul
 					class="flex flex-wrap gap-2 text-sm justify-center"
@@ -86,9 +133,11 @@ const { title, description, pubDate, updatedDate, image, tags, readingTime } =
 						))
 					}
 				</ul>
-				<h1 class="text-6xl mt-5">{title}</h1>
+				<h1 class="text-6xl text-center mt-5">
+					{title}
+				</h1>
 
-				<div class="mt-14 h-110">
+				<div class="mt-14 h-96">
 					{
 						image && (
 							<Image
@@ -99,8 +148,14 @@ const { title, description, pubDate, updatedDate, image, tags, readingTime } =
 						)
 					}
 				</div>
-				<div>
+				<div
+					class="mt-4 mb-12 flex gap-3 justify-center items-center"
+				>
 					<FormattedDate date={pubDate} />
+
+					<span
+						class="h-5 w-px bg-white"
+						aria-hidden="true"></span>
 
 					<div class="flex items-center gap-1.5">
 						<Icon

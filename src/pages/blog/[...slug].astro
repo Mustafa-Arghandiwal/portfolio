@@ -3,6 +3,7 @@ import { type CollectionEntry, getCollection, render } from "astro:content";
 import BlogLayout from "../../layouts/BlogLayout.astro";
 import { Image } from "astro:assets";
 import { getReadingTime } from "../../../src/lib/reading-time.ts";
+import Prose from "../../components/Prose.astro";
 
 export async function getStaticPaths() {
 	const posts = await getCollection("blog");
@@ -19,5 +20,7 @@ const readingTime = getReadingTime(post.body ?? "");
 ---
 
 <BlogLayout {...post.data} readingTime={readingTime}>
-	<Content />
+	<Prose>
+		<Content />
+	</Prose>
 </BlogLayout>

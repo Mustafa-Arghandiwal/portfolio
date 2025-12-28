@@ -11,12 +11,6 @@ tags:
 image: '../../assets/coffee-shop.jpg'
 ---
 
-Astro makes it incredibly easy to build **fast, content-focused websites**.
-In this post, I’ll walk through how I set up my blog, structured content,
-and handled styling in a clean, scalable way.
-
----
-
 ## Why Astro?
 
 Astro ships zero JavaScript by default, which makes it perfect for blogs and
@@ -46,7 +40,6 @@ src/
 ```
 ### Code Block
 ```js
-
 import { type CollectionEntry, getCollection, render } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
 

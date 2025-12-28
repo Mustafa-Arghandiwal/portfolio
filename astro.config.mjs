@@ -17,6 +17,14 @@ export default defineConfig({
 		}
 	},
 	integrations: [react(), icon()],
+	markdown: {
+		shikiConfig: {
+			theme: 'tokyo-night',
+
+
+
+		}
+	},
 	devToolbar: {
 		enabled: false,
 	}
