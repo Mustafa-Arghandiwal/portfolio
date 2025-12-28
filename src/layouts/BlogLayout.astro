@@ -115,10 +115,12 @@ const { title, description, pubDate, updatedDate, image, tags, readingTime } =
 		</header>
 
 		<!-- Main content -->
-		<main class="py-24 font-expo px:4 px-96">
+		<main
+			class="py-24 font-expo max-w-[65ch] 2xl:max-w-[85ch] mx-auto"
+		>
 			<article>
 				<ul
-					class="flex flex-wrap gap-2 text-sm justify-center"
+					class="flex flex-wrap gap-2 text-xs sm:text-sm justify-center"
 				>
 					{
 						tags.map((tag) => (
@@ -133,23 +135,25 @@ const { title, description, pubDate, updatedDate, image, tags, readingTime } =
 						))
 					}
 				</ul>
-				<h1 class="text-6xl text-center mt-5">
+				<h1
+					class="text-4xl md:text-6xl text-center mt-4 sm:mt-8"
+				>
 					{title}
 				</h1>
 
-				<div class="mt-14 h-96">
+				<div class="mt-8 lg:mt-12">
 					{
 						image && (
 							<Image
 								src={image}
 								alt=""
-								class="h-full object-cover rounded-md"
+								class=" max-h-85 object-cover rounded-md"
 							/>
 						)
 					}
 				</div>
 				<div
-					class="mt-4 mb-12 flex gap-3 justify-center items-center"
+					class="mt-4 font-bold mb-12 flex gap-3 justify-center items-center"
 				>
 					<FormattedDate date={pubDate} />
 

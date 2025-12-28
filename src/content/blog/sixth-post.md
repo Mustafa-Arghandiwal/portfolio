@@ -58,8 +58,9 @@ Use the `<details>` tag for FAQ sections or hidden technical details.
 ![Gradient background](/coffee-shop.jpg "Coffee shop")
 
 ---
+[Click here to see full code](https://github.com/Mustafa-Arghandiwal)
 ## 5. Advanced Code Blocks
-Syntax highlighting with line numbers or specific language support:
+Syntax `highlighting` with line numbers or specific language support:
 
 ```javascript
 // A simple 2025 ESNext feature example

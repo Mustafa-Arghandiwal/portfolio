@@ -4,29 +4,30 @@
 
 <div
 	class="prose max-w-none dark:prose-invert mx-auto
-prose-h1:font-bold prose-h1:text-xl
-prose-a:text-blue-600
-prose-p:text-justify
-prose-img:rounded-xl
-/* Inline code */
-prose-code:rounded prose-code:px-1.5 prose-code:py-0.5
-prose-code:bg-neutral-800
-prose-code:text-teal-600 dark:prose-code:text-teal-400
-prose-code:before:content-none prose-code:after:content-none
-/* Code blocks */
-prose-pre:pt-10
-prose-pre:rounded-xl
-prose-pre:bg-neutral-900 dark:prose-pre:bg-neutral-950
-prose-pre:text-neutral-100
-prose-pre:p-4
-prose-pre:overflow-x-auto
-prose-pre:text-sm
-prose-pre:leading-relaxed
-/* Remove double styling */
-prose-pre:shadow-lg
-prose-pre:border prose-pre:border-neutral-800"
+    prose-h1:font-bold prose-h1:text-xl
+    prose-a:text-blue-600
+    prose-p:text-justify xl:prose-lg
+    prose-img:rounded-xl
+    
+    prose-code:rounded prose-code:px-1.5 prose-code:py-0.5
+    prose-code:text-teal-600 dark:prose-code:text-teal-400
+    prose-code:bg-gray-100 dark:prose-code:bg-neutral-800
+    prose-code:before:content-none prose-code:after:content-none
+    /* Code blocks container */
+    prose-pre:pt-10
+    prose-pre:rounded-xl
+    prose-pre:bg-neutral-900 dark:prose-pre:bg-neutral-950
+    prose-pre:text-neutral-100
+    prose-pre:p-4
+    prose-pre:overflow-x-auto
+    prose-pre:text-sm
+    prose-pre:leading-relaxed
+    prose-pre:shadow-lg
+    prose-pre:border prose-pre:border-neutral-800
+    /* FIX: Reset styles for <code> tags that live inside <pre> */
+    prose-pre:prose-code:bg-transparent
+    prose-pre:prose-code:p-0
+    prose-pre:prose-code:text-inherit"
 >
 	<slot />
 </div>
-
-<!-- prose-code:bg-gray-100 dark:prose-code:bg-neutral-800 -->
