@@ -5,6 +5,7 @@ import tailwindcss from "@tailwindcss/vite";
 import react from "@astrojs/react";
 
 import icon from "astro-icon";
+import remarkGithubAlerts from "remark-github-alerts";
 
 // https://astro.build/config
 export default defineConfig({
@@ -18,6 +19,7 @@ export default defineConfig({
 	},
 	integrations: [react(), icon()],
 	markdown: {
+		remarkPlugins: [remarkGithubAlerts],
 		shikiConfig: {
 			theme: 'tokyo-night',
 
