@@ -1,3 +1,60 @@
-<div class="w-96 h-96 border border-dashed flex justify-center items-center">
-	<slot />
-</div>
+
+---
+import { getReadingTime } from "../lib/reading-time"
+import {Icon} from "astro-icon/components"
+import FormattedDate from "../components/FormattedDate.astro";
+import { Image } from "astro:assets";
+
+const {blog, index} = Astro.props
+---
+
+
+		<div class=`rounded-md ${index===0 && "sm:col-span-2 xl:col-span-3 sm:w-[75%]  sm:mx-auto"} overflow-hidden group`>
+			<a href={`/blog/${blog.id}`} class="cursor-pointer relative  block overflow-hidden ">
+				{blog.data.image && 
+						<Image
+							src={blog.data.image}
+							alt="blog image"
+					class=`rounded-md ${index===0 ? "h-56 sm:h-96" : "h-56"} object-cover hover:scale-110 duration-300 `
+						/>
+				}
+						<div class="absolute w-full bottom-0 h-10 backdrop-blur-xs flex flex-wrap items-center justify-between px-4 text-sm font-semibold">
+							<FormattedDate
+								date={
+									blog
+										.data
+										.pubDate
+								}
+							/>
+
+							<div class="flex items-center gap-1.5">
+								<Icon
+									name="lucide:clock-4"
+									class="w-5 h-5"
+								/>
+								{blog.body &&
+									getReadingTime(
+										blog.body,
+									)}
+							</div>
+						</div>
+					</a>
+
+			<div class="px-2">
+
+					<ul class="flex flex-wrap gap-2 mt-2 text-xs">
+						{blog.data.tags.map((tag:string) => (
+							<li class="px-2 py-0.5 text-[11px] uppercase tracking-wide
+           rounded-md border border-white/10
+           bg-white/5 text-white/70
+           hover:bg-white/10 hover:text-white transition">
+								{tag}
+							</li>
+						))}
+					</ul>
+				<h3 class=`${index===0 && "sm:text-4xl"} opacity-90 group-hover:opacity-100 duration-200 text-2xl mt-1 line-clamp-2 `>
+						{blog.data.title}
+					</h3>
+					<p class="mt-1 line-clamp-3 opacity-70 group-hover:opacity-100 duration-200">{blog.data.description}</p>
+			</div>
+				</div>
