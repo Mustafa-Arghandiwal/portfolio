@@ -12,23 +12,17 @@ import { Icon } from "astro-icon/components";
 		<title>Astro</title>
 	</head>
 	<body class="bg-black text-gray-200 font-expo px-4 pt-8">
-		<header
-			class="flex gap-3 sm:gap-5 items-center justify-center px-2 md:px-8"
-		>
-			<a
-				href="/"
-				class="font-reospec z-10 text-3xl sm:text-5xl cursor-pointer font-bold hover:text-[#DB5413] duration-75"
-				>M</a
-			>
+		<header class="sticky top-0 z-10 px-4 py-1.5 backdrop-blur-md">
 			<div
-				class="relative border-[0.5px] mx-auto border-gray-800 z-60 flex py-4 px-4 sm:px-8 rounded-full justify-center items-center"
+				class="flex items-center justify-between max-w-[60ch] 2xl:max-w-[80ch] mx-auto"
 			>
-				<div
-					class="z-0 absolute inset-0 backdrop-blur-sm rounded-full"
+				<a
+					href="/"
+					class="font-reospec z-10 text-3xl sm:text-4xl cursor-pointer font-bold hover:text-[#DB5413] duration-75"
+					>M</a
 				>
-				</div>
 				<div
-					class="z-10 flex gap-8 items-center justify-center font-orbitron text-xs sm:text-sm"
+					class="z-10 flex gap-8 items-center justify-center text-sm"
 				>
 					<a
 						class="cursor-pointer hover:opacity-80 font-semibold hover:text-[#DB5413] duration-75"
