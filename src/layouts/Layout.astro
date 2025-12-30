@@ -78,7 +78,7 @@ import { Icon } from "astro-icon/components";
 				/>
 				<div
 					id="menu"
-					class="absolute py-2 max-w-[150px] w-full rounded-md top-10 right-4 text-sm flex gap-2 flex-col border border-white/30 backdrop-blur-3xl z-50"
+					class="absolute py-2 max-w-[150px] w-full rounded-md top-10 right-4 text-sm hidden gap-2 flex-col border border-white/20 bg-black/80 z-50"
 				>
 					<a
 						class="cursor-pointer hover:opacity-80 hover:text-[#DB5413] duration-75 px-4"
@@ -129,17 +129,29 @@ import { Icon } from "astro-icon/components";
 <script>
 	const menuBtn = document.getElementById("menu-btn");
 	const menu = document.getElementById("menu");
+	function isMenuOpen() {
+		return menu && !menu.classList.contains("hidden");
+	}
 	menuBtn?.addEventListener("click", (e) => {
 		e.stopPropagation();
 		menu?.classList.toggle("hidden");
 		menu?.classList.toggle("flex");
 	});
-	document.body.addEventListener("click", (e) => {
-		if (!menu || !menuBtn) return;
-		const target = e.target as Node;
-		if (!menuBtn.contains(target) && !menu.contains(target)) {
-			menu?.classList.add("hidden");
-			menu?.classList.remove("flex");
-		}
-	});
+	document.body.addEventListener(
+		"click",
+		(e) => {
+			if (!menu || !menuBtn || !isMenuOpen()) return;
+			const target = e.target as Node;
+			if (
+				!menuBtn.contains(target) &&
+				!menu.contains(target)
+			) {
+				e.preventDefault();
+				e.stopImmediatePropagation();
+				menu?.classList.add("hidden");
+				menu?.classList.remove("flex");
+			}
+		},
+		true,
+	);
 </script>
