@@ -47,7 +47,7 @@ import { Icon } from "astro-icon/components";
 
 		<header class="sticky top-0 z-10 px-4 py-1.5 backdrop-blur-md">
 			<div
-				class="flex items-center justify-between max-w-[60ch] 2xl:max-w-[80ch] mx-auto"
+				class="flex items-center justify-between max-w-[620px] 2xl:max-w-[780px] mx-auto"
 			>
 				<a
 					href="/"
@@ -101,8 +101,8 @@ import { Icon } from "astro-icon/components";
 			<slot />
 		</main>
 
-		<footer class="grid place-items-center min-h-14">
-			<div class="flex gap-2 items-center">
+		<footer class="flex items-center justify-center gap-8 min-h-14">
+			<div class="flex gap-1 items-center">
 				<a class="p-1 group" href="#">
 					<Icon
 						name="lucide:github"
@@ -122,6 +122,10 @@ import { Icon } from "astro-icon/components";
 					/>
 				</a>
 			</div>
+			<Icon
+				name="not_ai_badge"
+				class="w-22 h-full opacity-60 hover:opacity-100 duration-150"
+			/>
 		</footer>
 	</body>
 </html>
