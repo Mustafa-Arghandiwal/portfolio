@@ -1,20 +1,51 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import ProjectCard from "../components/ProjectCard.astro";
 ---
 
 <Layout>
-	<p>Hi there</p>
-	<p>Hi there</p>
-	<p>Hi there</p>
-	<p>Hi there</p>
-	<p>Hi there</p>
-	<p>Hi there</p>
-	<p>Hi there</p>
-	<p>Hi there</p>
-	<p>Hi there</p>
-	<p>Hi there</p>
-	<p>Hi there</p>
-	<p>Hi there</p>
-	<p>Hi there</p>
-	<p>Hi there</p>
+	<section
+		class="max-w-[1200px] min-h-[calc(70vh)] mx-auto grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-12 my-12"
+	>
+		<ProjectCard
+			title="Job Seek"
+			tags={["laravel", "mysql", "react", "inertiajs"]}
+			image="/projects/job-seek.png"
+			github="https://github.com/Mustafa-Arghandiwal/job-seek"
+			live="https://job-seek-qg544.sevalla.app/"
+		>
+			<p>
+				A minimal job application website for both
+				candidates and employers
+			</p>
+			<ul>
+				<li>Multi-user (candidate/employer)</li>
+				<li>Drag and drop shortlisting</li>
+				<li>Easy applying</li>
+				<li>SPA</li>
+				<li>Multi-user</li>
+				<li>Drag and drop shortlisting</li>
+				<li>Easy applying</li>
+				<li>SPA</li>
+			</ul>
+		</ProjectCard>
+		<ProjectCard
+			title="Hangman"
+			tags={["react"]}
+			image="/projects/hangman.png"
+			github="https://github.com/Mustafa-Arghandiwal/hangman"
+			live="https://play-hangman2.netlify.app/"
+		>
+			<p>
+				A minimal job application website for both
+				candidates and employers
+			</p>
+			<ul>
+				<li>Multi-user</li>
+				<li>Drag and drop shortlisting</li>
+				<li>Easy applying</li>
+				<li>SPA</li>
+			</ul>
+		</ProjectCard>
+	</section>
 </Layout>
