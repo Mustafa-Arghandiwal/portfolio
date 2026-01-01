@@ -9,16 +9,16 @@ const {blog, index} = Astro.props
 ---
 
 
-		<div class=`rounded-md ${index===0 && "sm:col-span-2 xl:col-span-3 sm:w-[75%]  sm:mx-auto"} overflow-hidden group`>
-			<a href={`/blog/${blog.id}`} class="cursor-pointer relative  block overflow-hidden ">
+		<div class=`rounded-md ${index===0 && "sm:col-span-2 xl:col-span-3 sm:w-[75%]  sm:mx-auto"} overflow-hidden `>
+			<a href={`/blog/${blog.id}`} class="cursor-pointer relative  block overflow-hidden group">
 				{blog.data.image && 
 						<Image
 							src={blog.data.image}
 							alt="blog image"
-					class=`rounded-md ${index===0 ? "h-56 sm:h-96" : "h-56"} object-cover hover:scale-110 duration-300 `
+					class=`rounded-md ${index===0 ? "h-56 sm:h-96" : "h-56"} object-cover hover:scale-110 duration-500`
 						/>
 				}
-						<div class="absolute w-full bottom-0 h-10 backdrop-blur-xs flex flex-wrap items-center justify-between px-4 text-sm font-semibold">
+						<div class="absolute w-full -bottom-10 group-hover:bottom-0 duration-300 h-10 text-white/70  backdrop-blur-xs  flex flex-wrap items-center justify-between px-4 text-sm font-semibold">
 							<FormattedDate
 								date={
 									blog
@@ -42,19 +42,18 @@ const {blog, index} = Astro.props
 
 			<div class="px-2">
 
-					<ul class="flex flex-wrap gap-2 mt-2 text-xs">
-						{blog.data.tags.map((tag:string) => (
-							<li class="px-2 py-0.5 text-[11px] uppercase tracking-wide
-								   rounded-md border border-white/10
-								   bg-white/5 text-white/70
-								   hover:bg-white/10 hover:text-white transition">
-								{tag}
-							</li>
-						))}
-					</ul>
-				<h3 class=`${index===0 && "sm:text-4xl"} opacity-90 group-hover:opacity-100 duration-200 text-2xl mt-1 line-clamp-2 `>
+				<ul class="flex flex-wrap gap-2 mt-2 text-xs">
+				  {blog.data.tags.map((tag: string) => {
+				    return (
+				      <li class="px-2 py-0.5 uppercase tracking-wide cursor-default rounded-md bg-bg-card transition">
+					#{tag}
+				      </li>
+				    )
+				  })}
+				</ul>
+				<h3 class=`${index===0 && "sm:text-4xl"}  text-2xl mt-1 line-clamp-3 `>
 						{blog.data.title}
 					</h3>
-					<p class="mt-1 line-clamp-3 opacity-70 group-hover:opacity-100 duration-200 text-justify">{blog.data.description}</p>
+					<p class="mt-1 line-clamp-3 text-text-muted text-justify">{blog.data.description}</p>
 			</div>
 				</div>

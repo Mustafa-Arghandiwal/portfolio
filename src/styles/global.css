@@ -24,8 +24,110 @@
 	--breakpoint-big-tablet: 1000px;
 	--breakpoint-xs: 340px;
 
+	--color-bg: var(--bg);
+	--color-bg-card: var(--bg-card);
+	--color-bg-muted: var(--bg-muted);
+	--color-bg-overlay: var(--bg-overlay);
+	--color-text: var(--text);
+	--color-text-muted: var(--text-muted);
+	--color-text-faint: var(--text-faint);
+	--color-text-backdrop: var(--text-backdrop);
+
+	--color-primary: var(--primary);
+	--color-success: var(--success);
+	--color-warning: var(--warning);
+	--color-error: var(--error);
 }
 
+[data-theme="mocha"] {
+	/* backgrounds */
+	--bg: #1e1e2e;
+	/* base */
+	--bg-card: #313244;
+	/* surface1 */
+	--bg-muted: #29283c;
+	/* surface0 */
+	--bg-overlay: #45475a;
+	/* overlay0 */
+	/* text */
+	--text: #cdd6f4;
+	--text-muted: #bac2de;
+	--text-faint: #a6adc8;
+	--text-backdrop: #cdd6f4;
+	/* accents */
+	--primary: #89b4fa;
+	--success: #a6e3a1;
+	--warning: #fab387;
+	--error: #f38ba8;
+}
+
+
+[data-theme="frappe"] {
+	/* backgrounds */
+	--bg: #303446;
+	/* base */
+	--bg-card: #51576d;
+	/* surface1 */
+	--bg-muted: #414559;
+	/* surface0 */
+	--bg-overlay: #737994;
+	/* overlay0 */
+	/* text */
+	--text: #c6d0f5;
+	--text-muted: #b5bfe2;
+	--text-faint: #a5adce;
+	--text-backdrop: #c6d0f5;
+	/* accents */
+	--primary: #8caaee;
+	--success: #a6d189;
+	--warning: #ef9f76;
+	--error: #e78284;
+}
+
+
+[data-theme="macchiato"] {
+	/* backgrounds */
+	--bg: #24273a;
+	/* base */
+	--bg-card: #494d64;
+	/* surface1 */
+	--bg-muted: #363a4f;
+	/* surface0 */
+	--bg-overlay: #6e738d;
+	/* overlay0 */
+	/* text */
+	--text: #cad3f5;
+	--text-muted: #b8c0e0;
+	--text-faint: #a5adcb;
+	--text-backdrop: #cad3f5;
+	/* accents */
+	--primary: #8aadf4;
+	--success: #a6da95;
+	--warning: #f5a97f;
+	--error: #ed8796;
+}
+
+[data-theme="latte"] {
+	/* backgrounds */
+	--bg: #eff1f5;
+	/* base */
+	--bg-card: #bcc0cc;
+	/* surface1 */
+	--bg-muted: #ccd0da;
+	/* surface0 */
+	--bg-overlay: #9ca0b0;
+	/* overlay0 */
+	/* text */
+	--text: #4c4f69;
+	--text-muted: #5c5f77;
+	--text-faint: #6c6f85;
+	--text-backdrop: #7f849c;
+	/* accents */
+	--primary: #1e66f5;
+	--success: #40a02b;
+	--warning: #fe640b;
+	--error: #d20f39;
+}
 
 /* * { */
 /* 	padding: 0; */

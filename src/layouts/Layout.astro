@@ -3,7 +3,7 @@ import "../styles/global.css";
 import { Icon } from "astro-icon/components";
 ---
 
-<html lang="en">
+<html lang="en" data-theme="mocha">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -11,19 +11,19 @@ import { Icon } from "astro-icon/components";
 		<meta name="generator" content={Astro.generator} />
 		<title>Astro</title>
 	</head>
-	<body class="bg-black text-gray-200 relative font-expo px-4 pt-8">
-		<div
-			class="absolute top-0 left-0 right-0 h-screen -z-10 overflow-hidden"
-			style="
-				background-image: 
-					linear-gradient(to right, #4f4f4f2e 1px, transparent 1px),
-					linear-gradient(to bottom, #4f4f4f2e 1px, transparent 1px);
-				background-size: 18px 26px;
-				-webkit-mask-image: radial-gradient(ellipse 60% 50% at 50% 0%, #000 70%, transparent 100%);
-				mask-image: radial-gradient(ellipse 60% 50% at 50% 0%, #000 70%, transparent 100%);
-			"
-		>
-		</div>
+	<body class="bg-bg text-text relative font-expo px-4 pt-8">
+		<!-- <div -->
+		<!-- 	class="absolute top-0 left-0 right-0 h-screen -z-10 overflow-hidden" -->
+		<!-- 	style=" -->
+		<!-- 		background-image:  -->
+		<!-- 			linear-gradient(to right, #4f4f4f2e 1px, transparent 1px), -->
+		<!-- 			linear-gradient(to bottom, #4f4f4f2e 1px, transparent 1px); -->
+		<!-- 		background-size: 18px 26px; -->
+		<!-- 		-webkit-mask-image: radial-gradient(ellipse 60% 50% at 50% 0%, #000 70%, transparent 100%); -->
+		<!-- 		mask-image: radial-gradient(ellipse 60% 50% at 50% 0%, #000 70%, transparent 100%); -->
+		<!-- 	" -->
+		<!-- > -->
+		<!-- </div> -->
 
 		<!-- <div class="bg-[#0f0f0f] text-white"> -->
 		<!-- 	<div -->
@@ -46,29 +46,29 @@ import { Icon } from "astro-icon/components";
 		<!-- </div> -->
 
 		<header
-			class="sticky top-0 z-10 px-4 py-1.5 backdrop-blur-md backdrop-brightness-130"
+			class="text-text sticky top-0 z-10 px-4 py-1.5 backdrop-blur-xs bg-linear-to-b from-bg/90 to-bg/50"
 		>
 			<div
 				class="flex items-center justify-between max-w-[620px] 2xl:max-w-[780px] mx-auto"
 			>
 				<a
 					href="/"
-					class="font-reospec z-10 text-4xl cursor-pointer font-bold hover:text-[#DB5413] duration-75"
-					>M</a
+					class="z-10 text-4xl cursor-pointer font-bold hover:text-primary duration-75"
+					>~</a
 				>
 				<div
 					class="z-10 hidden sm:flex gap-8 items-center font-semibold justify-center text-sm"
 				>
 					<a
-						class="cursor-pointer hover:opacity-80 hover:text-[#DB5413] duration-75"
+						class="cursor-pointer hover:opacity-80 hover:text-primary duration-75"
 						href="/projects">Projects</a
 					>
 					<a
-						class="cursor-pointer hover:opacity-80 hover:text-[#DB5413] duration-75"
+						class="cursor-pointer hover:opacity-80 hover:text-primary duration-75"
 						href="/blog">Blog</a
 					>
 					<a
-						class="cursor-pointer hover:opacity-80 hover:text-[#DB5413] duration-75"
+						class="cursor-pointer hover:opacity-80 hover:text-primary duration-75"
 						href="/contact">Contact</a
 					>
 				</div>
@@ -80,18 +80,18 @@ import { Icon } from "astro-icon/components";
 				/>
 				<div
 					id="menu"
-					class="absolute py-2 max-w-[150px] w-full rounded-md top-10 right-4 text-sm hidden gap-2 flex-col border border-white/20 bg-black/80 z-50"
+					class="absolute py-2 max-w-[150px] w-full rounded-md top-10 right-4 text-sm hidden gap-2 flex-col font-semibold bg-bg-card/90 z-50"
 				>
 					<a
-						class="cursor-pointer hover:opacity-80 hover:text-[#DB5413] duration-75 px-4"
+						class="cursor-pointer hover:opacity-80 hover:text-primary duration-75 px-4"
 						href="/projects">Projects</a
 					>
 					<a
-						class="cursor-pointer hover:opacity-80 hover:text-[#DB5413] duration-75 px-4"
+						class="cursor-pointer hover:opacity-80 hover:text-primary duration-75 px-4"
 						href="/blog">Blog</a
 					>
 					<a
-						class="cursor-pointer hover:opacity-80 hover:text-[#DB5413] duration-75 px-4"
+						class="cursor-pointer hover:opacity-80 hover:text-primary duration-75 px-4"
 						href="/contact">Contact</a
 					>
 				</div>
