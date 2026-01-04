@@ -3,9 +3,17 @@ import "../styles/global.css";
 import { Icon } from "astro-icon/components";
 ---
 
-<html lang="en" data-theme="mocha">
+<html lang="en">
 	<head>
 		<meta charset="utf-8" />
+		<script is:inline>
+			const savedTheme =
+				localStorage.getItem("theme") || "mocha";
+			if (savedTheme) {
+				document.documentElement.dataset.theme =
+					savedTheme;
+			}
+		</script>
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
@@ -57,7 +65,7 @@ import { Icon } from "astro-icon/components";
 					>~</a
 				>
 				<div
-					class="z-10 hidden sm:flex gap-8 items-center font-semibold justify-center text-sm"
+					class="z-10 hidden sm:flex gap-8 items-center font-semibold justify-center text-sm relative"
 				>
 					<a
 						class="cursor-pointer hover:opacity-80 hover:text-primary duration-75"
@@ -71,11 +79,42 @@ import { Icon } from "astro-icon/components";
 						class="cursor-pointer hover:opacity-80 hover:text-primary duration-75"
 						href="/contact">Contact</a
 					>
+					<Icon
+						name="lucide:palette"
+						id="theme-btn"
+						class="w-5 h-5 cursor-pointer hover:text-primary active:scale-110 duration-100"
+					/>
+
+					<div
+						id="theme-menu"
+						class="*:min-w-20 *:py-0.5 *:cursor-pointer *:rounded-sm *:hover:ring-2 *: *:ring-primary absolute p-2 rounded-md top-8 right-0 text-sm hidden grid-cols-1 gap-2 font-semibold bg-bg-card/90 z-50"
+					>
+						<button
+							class="bg-[#eff1f5] text-[#4c4f69] theme"
+						>
+							Latte
+						</button>
+						<button
+							class="bg-[#303446] text-[#c6d0f5] theme"
+						>
+							Frappe
+						</button>
+						<button
+							class="bg-[#24273a] text-[#cad3f5] theme"
+						>
+							Macchiato
+						</button>
+						<button
+							class="bg-[#1e1e2e] text-[#cdd6f4] theme"
+						>
+							Mocha
+						</button>
+					</div>
 				</div>
 
 				<Icon
 					name="lucide:menu"
-					class="w-5 h-5 active:scale-110 duration-100 sm:hidden"
+					class="w-5 h-5 cursor-pointer hover:text-primary active:scale-110 duration-100 sm:hidden"
 					id="menu-btn"
 				/>
 				<div
@@ -135,13 +174,26 @@ import { Icon } from "astro-icon/components";
 <script>
 	const menuBtn = document.getElementById("menu-btn");
 	const menu = document.getElementById("menu");
+	const themeBtn = document.getElementById("theme-btn");
+	const themeMenu = document.getElementById("theme-menu");
+
 	function isMenuOpen() {
 		return menu && !menu.classList.contains("hidden");
 	}
+	function isThemeMenuOpen() {
+		return themeMenu && !themeMenu.classList.contains("hidden");
+	}
+
 	menuBtn?.addEventListener("click", (e) => {
 		e.stopPropagation();
 		menu?.classList.toggle("hidden");
 		menu?.classList.toggle("flex");
+	});
+
+	themeBtn?.addEventListener("click", (e) => {
+		e.stopPropagation();
+		themeMenu?.classList.toggle("hidden");
+		themeMenu?.classList.toggle("grid");
 	});
 	document.body.addEventListener(
 		"click",
@@ -153,11 +205,52 @@ import { Icon } from "astro-icon/components";
 				!menu.contains(target)
 			) {
 				e.preventDefault();
-				e.stopImmediatePropagation();
+				e.stopPropagation();
 				menu?.classList.add("hidden");
 				menu?.classList.remove("flex");
 			}
 		},
 		true,
 	);
+
+	document.body.addEventListener(
+		"click",
+		(e) => {
+			if (!themeMenu || !themeBtn || !isThemeMenuOpen())
+				return;
+			const target = e.target as Node;
+			if (
+				!themeBtn.contains(target) &&
+				!themeMenu.contains(target)
+			) {
+				e.preventDefault();
+				e.stopPropagation();
+				themeMenu?.classList.add("hidden");
+				themeMenu?.classList.remove("grid");
+			}
+		},
+		true,
+	);
+
+	const themeBtns = document.querySelectorAll("button.theme");
+	function updateThemeRing(activeTheme: string) {
+		themeBtns.forEach((btn) =>
+			btn.classList.toggle(
+				"ring-2",
+				btn.innerText.trim().toLowerCase() ===
+					activeTheme,
+			),
+		);
+	}
+	updateThemeRing(localStorage.getItem("theme") || "mocha");
+	function setTheme(theme: string) {
+		document.documentElement.dataset.theme = theme;
+		localStorage.setItem("theme", theme);
+		updateThemeRing(theme);
+	}
+	themeBtns.forEach((btn) => {
+		btn.addEventListener("click", () =>
+			setTheme(btn.innerText.trim().toLowerCase()),
+		);
+	});
 </script>
