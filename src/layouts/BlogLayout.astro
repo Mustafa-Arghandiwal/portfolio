@@ -62,22 +62,21 @@ const { title, description, pubDate, updatedDate, image, tags, readingTime } =
 
 <Layout>
 	<article class="max-w-[65ch] 2xl:max-w-[85ch] mx-auto">
-		<ul
-			class="flex flex-wrap gap-2 text-xs sm:text-sm justify-center"
-		>
-			{
-				tags.map((tag) => (
-					<li
-						class="px-2 py-0.5 uppercase tracking-wide
-								   rounded-md border border-white/10
-								   bg-white/5 text-white/70
-								   hover:bg-white/10 hover:text-white transition"
-					>
-						{tag}
-					</li>
-				))
-			}
-		</ul>
+		<div class="flex justify-center gap-x-4 gap-y-2 items-center flex-wrap">
+		<Icon name="lucide:tag"/>
+			<ul class="flex flex-wrap justify-center gap-2 text-sm">
+				  {tags.map((tag: string) => {
+				const asciiSum = tag.split('').map(char => char.charCodeAt(0)).reduce((acc, curr) => acc + curr, 0)
+				const accent_colors = ['teal', 'orange', 'sapphire', 'maroon', 'mauve', 'pink']
+				const tag_color = "text-" + accent_colors[asciiSum % accent_colors.length]
+				    return (
+			<li class=`${tag_color}  px-2 py-1 font-semibold tracking-wider cursor-default rounded-md bg-bg-card transition`>
+					{tag}
+				      </li>
+				    )
+				  })}
+				</ul>
+		</div>
 		<h1 class="text-4xl md:text-6xl text-center mt-4 sm:mt-8">
 			{title}
 		</h1>
