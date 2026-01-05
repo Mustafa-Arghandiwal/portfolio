@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
 import { Icon } from "astro-icon/components";
+import { ClientRouter } from "astro:transitions";
 ---
 
 <html lang="en">
@@ -18,6 +19,7 @@ import { Icon } from "astro-icon/components";
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Astro</title>
+		<ClientRouter />
 	</head>
 	<body class="bg-bg text-text relative font-expo px-4 pt-8">
 		<!-- <div -->
@@ -138,7 +140,7 @@ import { Icon } from "astro-icon/components";
 		</header>
 
 		<!-- Main content -->
-		<main class="px-3 xs:px-4 pt-12 pb-4">
+		<main class="px-3 xs:px-4 pt-12 pb-4" transition:animate="fade">
 			<slot />
 		</main>
 

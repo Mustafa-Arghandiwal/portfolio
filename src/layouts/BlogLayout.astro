@@ -7,9 +7,10 @@ import FormattedDate from "../components/FormattedDate.astro";
 import type { CollectionEntry } from "astro:content";
 type Props = CollectionEntry<"blog">["data"];
 export type BlogLayoutProps = CollectionEntry<"blog">["data"] & {
+	id: string
 	readingTime: string;
 };
-const { title, description, pubDate, updatedDate, image, tags, readingTime } =
+const { id, title, description, pubDate, updatedDate, image, tags, readingTime } =
 	Astro.props as BlogLayoutProps;
 ---
 
@@ -85,6 +86,7 @@ const { title, description, pubDate, updatedDate, image, tags, readingTime } =
 			{
 				image && (
 					<Image
+						transition:name={id}
 						src={image}
 						alt=""
 						class=" max-h-85 object-cover rounded-md"

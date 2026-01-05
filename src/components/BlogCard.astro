@@ -13,6 +13,7 @@ const {blog, index} = Astro.props
 			<a href={`/blog/${blog.id}`} class="cursor-pointer relative  block overflow-hidden group">
 				{blog.data.image && 
 						<Image
+							transition:name={blog.id}
 							src={blog.data.image}
 							alt="blog image"
 					class=`rounded-md ${index===0 ? "h-56 sm:h-96" : "h-56"} object-cover hover:scale-110 duration-500`
