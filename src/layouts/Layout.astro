@@ -8,12 +8,15 @@ import { ClientRouter } from "astro:transitions";
 	<head>
 		<meta charset="utf-8" />
 		<script is:inline>
-			const savedTheme =
-				localStorage.getItem("theme") || "mocha";
-			if (savedTheme) {
-				document.documentElement.dataset.theme =
-					savedTheme;
-			}
+			document.addEventListener("astro:page-load", () => {
+				const savedTheme =
+					localStorage.getItem("theme") ||
+					"mocha";
+				if (savedTheme) {
+					document.documentElement.dataset.theme =
+						savedTheme;
+				}
+			});
 		</script>
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
@@ -56,6 +59,7 @@ import { ClientRouter } from "astro:transitions";
 		<!-- </div> -->
 
 		<header
+			transition:persist
 			class="text-text sticky top-0 z-10 px-4 py-1.5 backdrop-blur-xs bg-linear-to-b from-bg/90 to-bg/50"
 		>
 			<div
@@ -144,7 +148,10 @@ import { ClientRouter } from "astro:transitions";
 			<slot />
 		</main>
 
-		<footer class="flex items-center justify-center gap-8 min-h-14">
+		<footer
+			transition:persist
+			class="flex items-center justify-center gap-8 min-h-14"
+		>
 			<div class="flex gap-1 items-center">
 				<a class="p-1 group" href="#">
 					<Icon
@@ -174,85 +181,94 @@ import { ClientRouter } from "astro:transitions";
 </html>
 
 <script>
-	const menuBtn = document.getElementById("menu-btn");
-	const menu = document.getElementById("menu");
-	const themeBtn = document.getElementById("theme-btn");
-	const themeMenu = document.getElementById("theme-menu");
+	document.addEventListener("astro:page-load", () => {
+		const menuBtn = document.getElementById("menu-btn");
+		const menu = document.getElementById("menu");
+		const themeBtn = document.getElementById("theme-btn");
+		const themeMenu = document.getElementById("theme-menu");
 
-	function isMenuOpen() {
-		return menu && !menu.classList.contains("hidden");
-	}
-	function isThemeMenuOpen() {
-		return themeMenu && !themeMenu.classList.contains("hidden");
-	}
+		function isMenuOpen() {
+			return menu && !menu.classList.contains("hidden");
+		}
+		function isThemeMenuOpen() {
+			return (
+				themeMenu &&
+				!themeMenu.classList.contains("hidden")
+			);
+		}
 
-	menuBtn?.addEventListener("click", (e) => {
-		e.stopPropagation();
-		menu?.classList.toggle("hidden");
-		menu?.classList.toggle("flex");
-	});
+		menuBtn?.addEventListener("click", (e) => {
+			e.stopPropagation();
+			menu?.classList.toggle("hidden");
+			menu?.classList.toggle("flex");
+		});
 
-	themeBtn?.addEventListener("click", (e) => {
-		e.stopPropagation();
-		themeMenu?.classList.toggle("hidden");
-		themeMenu?.classList.toggle("grid");
-	});
-	document.body.addEventListener(
-		"click",
-		(e) => {
-			if (!menu || !menuBtn || !isMenuOpen()) return;
-			const target = e.target as Node;
-			if (
-				!menuBtn.contains(target) &&
-				!menu.contains(target)
-			) {
-				e.preventDefault();
-				e.stopPropagation();
-				menu?.classList.add("hidden");
-				menu?.classList.remove("flex");
-			}
-		},
-		true,
-	);
-
-	document.body.addEventListener(
-		"click",
-		(e) => {
-			if (!themeMenu || !themeBtn || !isThemeMenuOpen())
-				return;
-			const target = e.target as Node;
-			if (
-				!themeBtn.contains(target) &&
-				!themeMenu.contains(target)
-			) {
-				e.preventDefault();
-				e.stopPropagation();
-				themeMenu?.classList.add("hidden");
-				themeMenu?.classList.remove("grid");
-			}
-		},
-		true,
-	);
-
-	const themeBtns = document.querySelectorAll("button.theme");
-	function updateThemeRing(activeTheme: string) {
-		themeBtns.forEach((btn) =>
-			btn.classList.toggle(
-				"ring-2",
-				btn.innerText.trim().toLowerCase() ===
-					activeTheme,
-			),
+		themeBtn?.addEventListener("click", (e) => {
+			e.stopPropagation();
+			themeMenu?.classList.toggle("hidden");
+			themeMenu?.classList.toggle("grid");
+		});
+		document.body.addEventListener(
+			"click",
+			(e) => {
+				if (!menu || !menuBtn || !isMenuOpen()) return;
+				const target = e.target as Node;
+				if (
+					!menuBtn.contains(target) &&
+					!menu.contains(target)
+				) {
+					e.preventDefault();
+					e.stopPropagation();
+					menu?.classList.add("hidden");
+					menu?.classList.remove("flex");
+				}
+			},
+			true,
 		);
-	}
-	updateThemeRing(localStorage.getItem("theme") || "mocha");
-	function setTheme(theme: string) {
-		document.documentElement.dataset.theme = theme;
-		localStorage.setItem("theme", theme);
-		updateThemeRing(theme);
-	}
-	themeBtns.forEach((btn) => {
-		btn.addEventListener("click", () =>
-			setTheme(btn.innerText.trim().toLowerCase()),
+
+		document.body.addEventListener(
+			"click",
+			(e) => {
+				if (
+					!themeMenu ||
+					!themeBtn ||
+					!isThemeMenuOpen()
+				)
+					return;
+				const target = e.target as Node;
+				if (
+					!themeBtn.contains(target) &&
+					!themeMenu.contains(target)
+				) {
+					e.preventDefault();
+					e.stopPropagation();
+					themeMenu?.classList.add("hidden");
+					themeMenu?.classList.remove("grid");
+				}
+			},
+			true,
 		);
+
+		const themeBtns = document.querySelectorAll("button.theme");
+		function updateThemeRing(activeTheme: string) {
+			themeBtns.forEach((btn) =>
+				btn.classList.toggle(
+					"ring-2",
+					btn.innerText.trim().toLowerCase() ===
+						activeTheme,
+				),
+			);
+		}
+		updateThemeRing(localStorage.getItem("theme") || "mocha");
+		function setTheme(theme: string) {
+			document.documentElement.dataset.theme = theme;
+			localStorage.setItem("theme", theme);
+			updateThemeRing(theme);
+		}
+		themeBtns.forEach((btn) => {
+			btn.addEventListener("click", () =>
+				setTheme(btn.innerText.trim().toLowerCase()),
+			);
+		});
 	});
 </script>
