@@ -70,7 +70,7 @@ const { title, description, pubDate, updatedDate, image, tags, readingTime } =
 				const accent_colors = ['teal', 'orange', 'sapphire', 'maroon', 'mauve', 'pink']
 				const tag_color = "text-" + accent_colors[asciiSum % accent_colors.length]
 				    return (
-			<li class=`${tag_color}  px-2 py-1 font-semibold tracking-wider cursor-default rounded-md bg-bg-card transition`>
+			<li class=`${tag_color}   px-2 py-1 font-semibold tracking-wider cursor-default rounded-md bg-bg-card transition`>
 					{tag}
 				      </li>
 				    )
@@ -93,11 +93,11 @@ const { title, description, pubDate, updatedDate, image, tags, readingTime } =
 			}
 		</div>
 		<div
-			class="mt-4 mb-12 flex gap-3 justify-center items-center opacity-90"
+			class="mt-4 mb-12 flex gap-3  justify-center items-center "
 		>
 			<FormattedDate date={pubDate} />
 
-			<span class="h-5 w-px bg-white/30" aria-hidden="true"
+			<span class="h-5 w-px bg-text" aria-hidden="true"
 			></span>
 
 			<div class="flex items-center gap-1.5">

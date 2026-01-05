@@ -47,7 +47,7 @@ Use the `<details>` tag for FAQ sections or hidden technical details.
 ---
 
 ## 4. Typography & Scientific Notation
-*   **Subscript:** H<sub>2</sub>O
+*   Subscript: H<sub>2</sub>O
 *   **Superscript:** X<sup>2</sup> + Y<sup>2</sup> = Z<sup>2</sup>
 *   **Abbreviation:** <abbr title="HyperText Markup Language">HTML</abbr> is easy.
 *   **Keyboard Input:** Press <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd> to open the command palette.
