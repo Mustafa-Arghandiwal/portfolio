@@ -2,6 +2,7 @@
 import "../styles/global.css";
 import { Icon } from "astro-icon/components";
 import { ClientRouter } from "astro:transitions";
+import BreadCrumbs from "../components/BreadCrumbs.astro";
 ---
 
 <html lang="en">
@@ -59,30 +60,29 @@ import { ClientRouter } from "astro:transitions";
 		<!-- </div> -->
 
 		<header
-			transition:persist
 			class="text-text sticky top-0 z-10 px-4 py-1.5 backdrop-blur-xs bg-linear-to-b from-bg/90 to-bg/50"
 		>
 			<div
 				class="flex items-center justify-between max-w-[620px] 2xl:max-w-[780px] mx-auto"
 			>
-				<a
-					href="/"
-					class="z-10 text-4xl cursor-pointer font-bold hover:text-primary duration-75"
-					>~</a
+				<div
+					class="font-semibold flex gap-1.5 flex-wrap items-center"
 				>
+					<BreadCrumbs />
+				</div>
 				<div
 					class="z-10 hidden sm:flex gap-8 items-center font-semibold justify-center text-sm relative"
 				>
 					<a
-						class="cursor-pointer hover:opacity-80 hover:text-primary duration-75"
+						class="cursor-pointer hover:text-primary duration-75"
 						href="/projects">Projects</a
 					>
 					<a
-						class="cursor-pointer hover:opacity-80 hover:text-primary duration-75"
+						class="cursor-pointer hover:text-primary duration-75"
 						href="/blog">Blog</a
 					>
 					<a
-						class="cursor-pointer hover:opacity-80 hover:text-primary duration-75"
+						class="cursor-pointer hover:text-primary duration-75"
 						href="/contact">Contact</a
 					>
 					<Icon
@@ -128,15 +128,15 @@ import { ClientRouter } from "astro:transitions";
 					class="absolute py-2 max-w-[150px] w-full rounded-md top-10 right-4 text-sm hidden gap-2 flex-col font-semibold bg-bg-card/90 z-50"
 				>
 					<a
-						class="cursor-pointer hover:opacity-80 hover:text-primary duration-75 px-4"
+						class="cursor-pointer hover:text-primary duration-75 px-4"
 						href="/projects">Projects</a
 					>
 					<a
-						class="cursor-pointer hover:opacity-80 hover:text-primary duration-75 px-4"
+						class="cursor-pointer hover:text-primary duration-75 px-4"
 						href="/blog">Blog</a
 					>
 					<a
-						class="cursor-pointer hover:opacity-80 hover:text-primary duration-75 px-4"
+						class="cursor-pointer hover:text-primary duration-75 px-4"
 						href="/contact">Contact</a
 					>
 				</div>
@@ -148,10 +148,7 @@ import { ClientRouter } from "astro:transitions";
 			<slot />
 		</main>
 
-		<footer
-			transition:persist
-			class="flex items-center justify-center gap-8 min-h-14"
-		>
+		<footer class="flex items-center justify-center gap-8 min-h-14">
 			<div class="flex gap-1 items-center">
 				<a class="p-1 group" href="#">
 					<Icon

@@ -10,7 +10,7 @@ interface Props {
 const { title, tags, image, github, live } = Astro.props;
 ---
 
-<div class="border border-white/10 p-5 rounded-xl flex flex-col">
+<div class="border border-text/10 p-5 rounded-xl flex flex-col">
 	<div class="rounded-md overflow-hidden max-h-72">
 		<img
 			class="h-full object-cover w-full hover:scale-110 duration-300"
@@ -37,7 +37,7 @@ const { title, tags, image, github, live } = Astro.props;
 					<a
 						href={live}
 						target="_blank"
-						class=" flex items-center gap-1  px-1.5 rounded-sm bg-red-900/60 hover:bg-red-900 hover:scale-110 duration-150"
+						class=" flex items-center gap-1  px-1.5 rounded-sm text-white/90 bg-[#d20f39]/80  hover:scale-110 duration-150"
 					>
 						live
 					</a>
@@ -53,19 +53,19 @@ const { title, tags, image, github, live } = Astro.props;
 	</div>
 
 	<div class="mt-auto">
-		<ul class="flex flex-wrap gap-2 text-xs">
-			{
-				tags.map((tag) => (
-					<li
-						class="px-2 py-0.5 text-xs tracking-wide
-							   rounded-md border border-white/10
-							   bg-white/5 text-white/70
-							   hover:bg-white/10 hover:text-white transition"
-					>
-						{tag}
-					</li>
-				))
-			}
-		</ul>
+		
+			<ul class="flex flex-wrap gap-2 text-sm">
+				  {tags.map((tag: string) => {
+				const asciiSum = tag.split('').map(char => char.charCodeAt(0)).reduce((acc, curr) => acc + curr, 0)
+				const accent_colors = ['teal', 'orange', 'sapphire', 'maroon', 'mauve', 'pink']
+				const tag_color = "text-" + accent_colors[asciiSum % accent_colors.length]
+				    return (
+			<li class=`${tag_color}  px-2 py-0.5 font-semibold tracking-wider cursor-default rounded-md bg-bg-card transition`>
+					{tag}
+				      </li>
+				    )
+				  })}
+				</ul>
+
 	</div>
 </div>
