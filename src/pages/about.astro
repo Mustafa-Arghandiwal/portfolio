@@ -1,0 +1,49 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Prose from "../components/Prose.astro";
+---
+
+<Layout>
+	<div
+		class="flex gap-12 justify-center items-center min-h-[calc(100vh-140px)] flex-col lg:flex-row"
+	>
+		<div
+			class="rounded-full w-52 lg:w-74 grid place-items-center overflow-hidden pt-4 pl-3 group"
+		>
+			<img
+				class="group-hover:scale-105 duration-300"
+				src="/profile-black-hoodie-min.png"
+				alt="profile image"
+			/>
+		</div>
+
+		<div class="max-w-[600px]">
+			<Prose>
+				<p>
+					Hey! I’m <span
+						class="text-teal font-bold"
+						>Mustafa</span
+					>, from Kabul, Afghanistan.<br />
+					I am a Web Developer with a focus on Frontend.
+					I mostly do <span
+						class="text-teal font-bold"
+						>React</span
+					> and <span class="text-teal font-bold"
+						>Astro</span
+					>
+				</p>
+			</Prose>
+		</div>
+	</div>
+
+	<div class="lg:mt-12">
+		<h1 class="text-3xl text-center mb-4">Days I Code</h1>
+		<div class="overflow-x-auto">
+			<img
+				src="http://ghchart.rshah.org/179299/Mustafa-Arghandiwal"
+				alt="chart"
+				class="h-38 min-w-[800px] mx-auto"
+			/>
+		</div>
+	</div>
+</Layout>
