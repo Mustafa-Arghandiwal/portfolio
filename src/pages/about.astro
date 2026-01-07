@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Prose from "../components/Prose.astro";
+import { Icon } from "astro-icon/components";
 ---
 
 <Layout>
@@ -19,30 +20,98 @@ import Prose from "../components/Prose.astro";
 
 		<div class="max-w-[600px]">
 			<Prose>
-				<p>
-					Hey! I’m <span
-						class="text-teal font-bold"
-						>Mustafa</span
-					>, from Kabul, Afghanistan.<br />
-					I am a Web Developer with a focus on Frontend.
-					I mostly do <span
-						class="text-teal font-bold"
-						>React</span
-					> and <span class="text-teal font-bold"
-						>Astro</span
+				<div>
+					<span
+						class="text-primary text-3xl block font-bold"
 					>
+						Mustafa Arghandiwal
+					</span>
+					<div class="flex items-center gap-2">
+						<Icon
+							name="lucide:map-pin"
+							class="w-5 h-5 text-primary"
+						/>
+						<span class="text-text">
+							Kabul, Afghanistan
+						</span>
+					</div>
+				</div>
+				<p>
+					I am a Web Developer focused on <span
+						class="text-primary font-semibold"
+						>Frontend Development.</span
+					><br />
+					I mainly work with <span
+						class="text-primary font-semibold"
+						>React</span
+					>, <span
+						class="text-primary font-semibold"
+						>Astro</span
+					><br />
+					I use <span
+						class="text-primary font-semibold"
+						>Arch</span
+					> (btw) with <span
+						class="text-primary font-semibold"
+						>Hyprland</span
+					> as my daily driver,<br />
+					and my editor of choice is <span
+						class="text-primary font-semibold"
+						>Neovim</span
+					>.
+					<br />
 				</p>
+				<h3>Connect:</h3>
+				<div class="not-prose text-text flex gap-4">
+					<div
+						class="flex items-center gap-x-4 flex-wrap"
+					>
+						<a
+							class="p-1 duration-150 hover:text-primary"
+							href="https://github.com/Mustafa-Arghandiwal"
+							target="_blank"
+						>
+							<Icon
+								name="lucide:github"
+							/>
+						</a>
+						<span
+							class="text-text-faint select-none"
+							>|</span
+						>
+						<a
+							class="p-1 duration-150 hover:text-primary"
+							href="https://x.com/_its_mustafa"
+							target="_blank"
+						>
+							<Icon name="twitter" />
+						</a>
+						<span
+							class="text-text-faint select-none"
+							>|</span
+						>
+						<a
+							class="p-1 font-medium duration-150 hover:text-primary flex gap-1 items-center"
+							href="mailto:hi@itsmustafa.dev"
+						>
+							<Icon
+								name="lucide:mail"
+							/>
+							hi@itsmustafa.dev
+						</a>
+					</div>
+				</div>
 			</Prose>
 		</div>
 	</div>
 
-	<div class="lg:mt-12">
-		<h1 class="text-3xl text-center mb-4">Days I Code</h1>
+	<div class="mt-12">
+		<h1 class="text-3xl text-center">Days I Code</h1>
 		<div class="overflow-x-auto">
 			<img
-				src="http://ghchart.rshah.org/179299/Mustafa-Arghandiwal"
+				src="http://ghchart.rshah.org/6f8faf/Mustafa-Arghandiwal"
 				alt="chart"
-				class="h-38 min-w-[800px] mx-auto"
+				class="mt-8 h-38 min-w-[800px] mx-auto"
 			/>
 		</div>
 	</div>
