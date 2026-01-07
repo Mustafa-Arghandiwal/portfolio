@@ -21,25 +21,48 @@ const { title, tags, image, github, live } = Astro.props;
 		<h4 class="text-2xl">
 			{title}
 		</h4>
+
 		<div class="flex gap-2 items-center">
 			{
 				github && (
-					<a href={github} target="_blank">
+					<a
+						href={github}
+						target="_blank"
+						class="inline-flex items-center gap-1.5
+						px-2 py-0.5
+						rounded-sm
+						text-text-muted
+						border border-bg-overlay
+						hover:text-primary hover:border-primary
+						duration-150"
+					>
 						<Icon
 							name="lucide:github"
-							class="h-4 w-4 hover:scale-125 duration-150"
+							class="w-4 h-4"
 						/>
+						<span>Code</span>
 					</a>
 				)
 			}
+
 			{
 				live && (
 					<a
 						href={live}
 						target="_blank"
-						class=" flex items-center gap-1  px-1.5 rounded-sm text-white/90 bg-[#d20f39]/80  hover:scale-110 duration-150"
+						class="inline-flex items-center gap-1.5
+						px-2 py-0.5
+						rounded-sm
+						text-text-muted
+						border border-bg-overlay
+						hover:text-primary hover:border-primary
+						duration-150"
 					>
-						live
+						<Icon
+							name="lucide:external-link"
+							class="w-4 h-4"
+						/>
+						<span>Live</span>
 					</a>
 				)
 			}
@@ -53,19 +76,52 @@ const { title, tags, image, github, live } = Astro.props;
 	</div>
 
 	<div class="mt-auto">
-		
-			<ul class="flex flex-wrap gap-2 text-sm">
-				  {tags.map((tag: string) => {
-				const asciiSum = tag.split('').map(char => char.charCodeAt(0)).reduce((acc, curr) => acc + curr, 0)
-				const accent_colors = ['teal', 'orange', 'sapphire', 'maroon', 'mauve', 'pink']
-				const tag_color = "text-" + accent_colors[asciiSum % accent_colors.length]
-				    return (
-			<li class=`${tag_color}  px-2 py-0.5 font-semibold tracking-wider cursor-default rounded-md bg-bg-card transition`>
-					{tag}
-				      </li>
-				    )
-				  })}
-				</ul>
+		<ul class="flex flex-wrap gap-2 text-sm">
+			{
+				tags.map((tag: string) => {
+					const asciiSum = tag
+						.split("")
+						.map((char) =>
+							char.charCodeAt(0),
+						)
+						.reduce(
+							(acc, curr) =>
+								acc + curr,
+							0,
+						);
 
+					const accent_colors = [
+						"teal",
+						"orange",
+						"sapphire",
+						"maroon",
+						"mauve",
+						"pink",
+					];
+
+					const tag_color =
+						"text-" +
+						accent_colors[
+							asciiSum %
+								accent_colors.length
+						];
+
+					return (
+						<li
+							class={`${tag_color}
+						px-2 py-0.5
+						font-medium tracking-tight
+						rounded
+						border border-bg-overlay
+						bg-bg-muted/30
+						cursor-default
+						select-none`}
+						>
+							{tag}
+						</li>
+					);
+				})
+			}
+		</ul>
 	</div>
 </div>

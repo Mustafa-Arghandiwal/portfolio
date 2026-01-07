@@ -17,6 +17,18 @@
 @import 'tailwindcss';
 @plugin '@tailwindcss/typography';
 
+html {
+	scrollbar-color: var(--primary) transparent;
+}
+
+::-webkit-scrollbar {
+	width: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: var(--primary);
+	border-radius: 999px;
+}
 
 @theme {
 	--font-orbitron: "Orbitron", sans-serif;
@@ -154,6 +166,7 @@
 	--success: #40a02b;
 	--warning: #fe640b;
 	--error: #d20f39;
+
 	--teal: #179299;
 	--sapphire: #209fb5;
 	--maroon: #e64553;
@@ -182,12 +195,12 @@
 	--error: #fb4934;
 	--accent: #8ec07c;
 
-	--orange: #fe8019;
 	--teal: #8ec07c;
 	--sapphire: #83a598;
-	--purple: #d3869b;
+	--maroon: #cc6f6a;
+	--mauve: #d3869b;
 	--pink: #fb4934;
-	--gray: #928374;
+	--orange: #fe8019;
 }
 
 [data-theme="gruvbox light"] {
@@ -208,14 +221,13 @@
 	--success: #98971a;
 	--warning: #d79921;
 	--error: #cc241d;
-	--accent: #689d6a;
 
-	--orange: #d65d0e;
 	--teal: #689d6a;
 	--sapphire: #458588;
-	--purple: #b16286;
+	--maroon: #b16286;
+	--mauve: #b18eab;
 	--pink: #cc241d;
-	--gray: #7c6f64;
+	--orange: #d65d0e;
 }
 
 [data-theme="rose pine"] {
