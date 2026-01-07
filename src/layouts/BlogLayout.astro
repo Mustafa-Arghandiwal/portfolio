@@ -1,17 +1,26 @@
 ---
 import "../styles/global.css";
 import { Icon } from "astro-icon/components";
+import TagChips from "../components/TagChips.astro";
 import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
 import FormattedDate from "../components/FormattedDate.astro";
 import type { CollectionEntry } from "astro:content";
 type Props = CollectionEntry<"blog">["data"];
 export type BlogLayoutProps = CollectionEntry<"blog">["data"] & {
-	id: string
+	id: string;
 	readingTime: string;
 };
-const { id, title, description, pubDate, updatedDate, image, tags, readingTime } =
-	Astro.props as BlogLayoutProps;
+const {
+	id,
+	title,
+	description,
+	pubDate,
+	updatedDate,
+	image,
+	tags,
+	readingTime,
+} = Astro.props as BlogLayoutProps;
 ---
 
 <script>
@@ -63,20 +72,11 @@ const { id, title, description, pubDate, updatedDate, image, tags, readingTime }
 
 <Layout>
 	<article class="max-w-[65ch] 2xl:max-w-[85ch] mx-auto">
-		<div class="flex justify-center gap-x-4 gap-y-2 items-center flex-wrap">
-		<Icon name="lucide:tag"/>
-			<ul class="flex flex-wrap justify-center gap-2 text-sm">
-				  {tags.map((tag: string) => {
-				const asciiSum = tag.split('').map(char => char.charCodeAt(0)).reduce((acc, curr) => acc + curr, 0)
-				const accent_colors = ['teal', 'orange', 'sapphire', 'maroon', 'mauve', 'pink']
-				const tag_color = "text-" + accent_colors[asciiSum % accent_colors.length]
-				    return (
-			<li class=`${tag_color}   px-2 py-1 font-semibold tracking-wider cursor-default rounded-md bg-bg-card transition`>
-					{tag}
-				      </li>
-				    )
-				  })}
-				</ul>
+		<div
+			class="flex justify-center gap-x-4 gap-y-2 items-center flex-wrap"
+		>
+			<Icon name="lucide:tag" />
+			<TagChips tags={tags} />
 		</div>
 		<h1 class="text-4xl md:text-6xl text-center mt-4 sm:mt-8">
 			{title}
@@ -94,9 +94,7 @@ const { id, title, description, pubDate, updatedDate, image, tags, readingTime }
 				)
 			}
 		</div>
-		<div
-			class="mt-4 mb-12 flex gap-3  justify-center items-center "
-		>
+		<div class="mt-4 mb-12 flex gap-3 justify-center items-center">
 			<FormattedDate date={pubDate} />
 
 			<span class="h-5 w-px bg-text" aria-hidden="true"

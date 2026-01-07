@@ -1,0 +1,42 @@
+---
+const { tags } = Astro.props;
+---
+
+<ul class="flex flex-wrap gap-2 text-sm">
+	{
+		tags.map((tag: string) => {
+			const asciiSum = tag
+				.split("")
+				.map((char) => char.charCodeAt(0))
+				.reduce((acc, curr) => acc + curr, 0);
+
+			const accent_colors = [
+				"teal",
+				"orange",
+				"sapphire",
+				"maroon",
+				"mauve",
+				"pink",
+			];
+
+			const tag_color =
+				"text-" +
+				accent_colors[asciiSum % accent_colors.length];
+
+			return (
+				<li
+					class={`${tag_color}
+						px-2 py-0.5
+						font-medium tracking-tight
+						rounded
+						border border-bg-overlay
+						bg-bg-muted/30
+						cursor-default
+						select-none`}
+				>
+					{tag}
+				</li>
+			);
+		})
+	}
+</ul>
