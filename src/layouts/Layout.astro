@@ -25,7 +25,7 @@ import BreadCrumbs from "../components/BreadCrumbs.astro";
 		<title>Astro</title>
 		<ClientRouter />
 	</head>
-	<body class="bg-bg text-text relative font-expo px-4 pt-8">
+	<body class="bg-bg text-text relative font-expo">
 		<!-- <div -->
 		<!-- 	class="absolute top-0 left-0 right-0 h-screen -z-10 overflow-hidden" -->
 		<!-- 	style=" -->
@@ -93,7 +93,7 @@ import BreadCrumbs from "../components/BreadCrumbs.astro";
 
 					<div
 						id="theme-menu"
-						class="*:min-w-20 *:py-0.5 *:cursor-pointer *:rounded-sm *:hover:ring-2 *: *:ring-primary absolute p-2 rounded-md top-8 right-0 text-sm hidden grid-cols-1 gap-2 font-semibold bg-bg-card/90 z-50"
+						class="*:min-w-20 *:py-0.5 *:px-1 *:cursor-pointer *:rounded-sm *:hover:ring-2 *: *:ring-primary absolute p-2 rounded-md top-8 right-0 text-sm hidden grid-cols-1 gap-2 font-semibold bg-bg-card/90 z-50"
 					>
 						<button
 							class="bg-[#eff1f5] text-[#4c4f69] theme"
@@ -114,6 +114,21 @@ import BreadCrumbs from "../components/BreadCrumbs.astro";
 							class="bg-[#1e1e2e] text-[#cdd6f4] theme"
 						>
 							Mocha
+						</button>
+						<button
+							class="bg-[#282828] text-[#ebdbb2] theme"
+						>
+							Gruvbox Dark
+						</button>
+						<button
+							class="bg-[#fbf1c7] text-[#3c3836] theme"
+						>
+							Gruvbox Light
+						</button>
+						<button
+							class="bg-[#191724] text-[#e0def4] theme"
+						>
+							Rose pine
 						</button>
 					</div>
 				</div>
@@ -144,7 +159,7 @@ import BreadCrumbs from "../components/BreadCrumbs.astro";
 		</header>
 
 		<!-- Main content -->
-		<main class="px-3 xs:px-4 pt-12 pb-4" transition:animate="fade">
+		<main class="px-5 xs:px-6 pt-12 pb-4" transition:animate="fade">
 			<slot />
 		</main>
 
