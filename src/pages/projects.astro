@@ -5,33 +5,30 @@ import ProjectCard from "../components/ProjectCard.astro";
 
 <Layout>
 	<h1 class="text-center text-5xl md:text-6xl">My Projects</h1>
-	<p class="mx-auto text-center mt-6 text-lg text-text-muted max-w-96">
-		Short reads on what I am building, breaking, and figuring out
-		along the way.
-	</p>
 	<section
 		class="max-w-[1200px] min-h-[calc(70vh)] mx-auto grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-12 my-12"
 	>
 		<ProjectCard
 			title="Job Seek"
-			tags={["laravel", "mysql", "react", "inertiajs"]}
+			tags={["laravel", "mysql", "react", "inertia.js"]}
 			image="/projects/job-seek.png"
 			github="https://github.com/Mustafa-Arghandiwal/job-seek"
 			live="https://job-seek-qg544.sevalla.app/"
 		>
 			<p>
-				A minimal job application website for both
-				candidates and employers
+				A clean, minimal job application platform for
+				both candidates and employers.
 			</p>
 			<ul>
-				<li>Multi-user (candidate/employer)</li>
-				<li>Drag and drop shortlisting</li>
-				<li>Easy applying</li>
-				<li>SPA</li>
-				<li>Multi-user</li>
-				<li>Drag and drop shortlisting</li>
-				<li>Easy applying</li>
-				<li>SPA</li>
+				<li>
+					Multiple user roles (candidate &
+					employer)
+				</li>
+				<li>
+					Drag-and-drop shortlisting for employers
+				</li>
+				<li>One click job applications</li>
+				<li>SPA experience</li>
 			</ul>
 		</ProjectCard>
 		<ProjectCard
@@ -42,15 +39,13 @@ import ProjectCard from "../components/ProjectCard.astro";
 			live="https://play-hangman2.netlify.app/"
 		>
 			<p>
-				A minimal job application website for both
-				candidates and employers
+				A fun Hangman game themed around programming
+				languages, built with React.
 			</p>
-			<ul>
-				<li>Multi-user</li>
-				<li>Drag and drop shortlisting</li>
-				<li>Easy applying</li>
-				<li>SPA</li>
-			</ul>
 		</ProjectCard>
 	</section>
+
+	<p class="mx-auto text-center my-6 text-lg text-text-muted max-w-96">
+		More coming soon...
+	</p>
 </Layout>
