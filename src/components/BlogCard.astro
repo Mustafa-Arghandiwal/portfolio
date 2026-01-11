@@ -50,7 +50,7 @@ const {blog, index} = Astro.props
 			
 		</div>
 				
-				<h3 class=`${index===0 && "sm:text-4xl"}  text-2xl mt-1 line-clamp-3 `>
+		<h3 transition:name={blog.data.title} class=`${index===0 && "sm:text-4xl"}  text-2xl mt-1 line-clamp-3 `>
 						{blog.data.title}
 					</h3>
 					<p class="mt-1 line-clamp-3 text-text-muted text-justify">{blog.data.description}</p>
