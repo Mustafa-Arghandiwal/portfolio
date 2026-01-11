@@ -6,13 +6,13 @@
 
 
 
-@font-face {
-	font-family: "Reospec";
-	/* font-style: normal; */
-	/* font-weight: 200 700; */
-	/* font-display: swap; */
-	src: url("/fonts/Reospec.otf");
-}
+/* @font-face { */
+/* 	font-family: "Reospec"; */
+/* 	font-style: normal; */
+/* 	font-weight: 200 700; */
+/* 	font-display: swap; */
+/* 	src: url("/fonts/Reospec.otf"); */
+/* } */
 
 @import 'tailwindcss';
 @plugin '@tailwindcss/typography';

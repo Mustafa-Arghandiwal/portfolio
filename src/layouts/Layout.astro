@@ -3,6 +3,8 @@ import "../styles/global.css";
 import { Icon } from "astro-icon/components";
 import { ClientRouter } from "astro:transitions";
 import BreadCrumbs from "../components/BreadCrumbs.astro";
+const { pageTitle } = Astro.props;
+console.log(pageTitle);
 ---
 
 <html lang="en">
@@ -13,10 +15,10 @@ import BreadCrumbs from "../components/BreadCrumbs.astro";
 				localStorage.getItem("theme") || "mocha";
 			document.documentElement.dataset.theme = savedTheme;
 		</script>
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/svg+xml" href="/m-icon.png" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>{pageTitle} | Mustafa</title>
 		<ClientRouter />
 	</head>
 	<body class="bg-bg text-text relative font-expo">
@@ -174,9 +176,7 @@ import BreadCrumbs from "../components/BreadCrumbs.astro";
 			<slot />
 		</main>
 
-		<footer
-			class="flex items-center justify-center gap-8 min-h-14"
-		>
+		<footer class="flex items-center justify-center gap-8 min-h-14">
 			<div class="flex gap-1 items-center z-10">
 				<a class="p-1" href="#">
 					<Icon
