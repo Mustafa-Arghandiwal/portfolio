@@ -18,7 +18,13 @@ console.log(pageTitle);
 		<link rel="icon" type="image/svg+xml" href="/m-icon.png" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>{pageTitle} | Mustafa</title>
+		<title>
+			{
+				pageTitle === "Home"
+					? "Mustafa"
+					: pageTitle + " | Mustafa"
+			}
+		</title>
 		<ClientRouter />
 	</head>
 	<body class="bg-bg text-text relative font-expo">
