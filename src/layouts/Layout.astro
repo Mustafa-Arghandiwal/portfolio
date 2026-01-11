@@ -3,6 +3,7 @@ import "../styles/global.css";
 import { Icon } from "astro-icon/components";
 import { ClientRouter } from "astro:transitions";
 import BreadCrumbs from "../components/BreadCrumbs.astro";
+const currentPath = Astro.url.pathname;
 ---
 
 <html lang="en">
@@ -70,7 +71,7 @@ import BreadCrumbs from "../components/BreadCrumbs.astro";
 						class="z-10 hidden sm:flex gap-8 items-center font-semibold justify-center text-sm"
 					>
 						<a
-							class="cursor-pointer hover:text-primary duration-75"
+							class=` relative cursor-pointer hover:text-primary duration-75 ${currentPath.startsWith('/projects') && "before:absolute before:content-[''] before:bg-primary before:w-full before:h-0.5 before:rounded-full before:bottom-0"}`
 							href="/projects"
 							>Projects</a
 						>
@@ -89,7 +90,7 @@ import BreadCrumbs from "../components/BreadCrumbs.astro";
 						<Icon
 							name="lucide:palette"
 							id="theme-btn"
-							class="w-5 h-5 cursor-pointer hover:text-primary active:scale-110 duration-100"
+							class="w-5 h-5 hover:text-primary cursor-pointer active:scale-110 duration-100"
 						/>
 
 						<div
@@ -197,7 +198,7 @@ import BreadCrumbs from "../components/BreadCrumbs.astro";
 			</div>
 			<Icon
 				name="not_ai_badge"
-				class="w-22 h-full opacity-60 hover:opacity-100 duration-150"
+				class="z-20 w-22 h-full hover:opacity-100 duration-150"
 			/>
 		</footer>
 	</body>

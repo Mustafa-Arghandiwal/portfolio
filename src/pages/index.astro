@@ -1,45 +1,78 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import HeroText from "../components/HeroText";
+import { Icon } from "astro-icon/components";
 ---
 
 <Layout>
-	<div class="h-[calc(100vh-156px)] flex items-center">
-		<img
-			class="absolute top-0 right-0 -z-10 opacity-50"
-			src="/gradient.png"
-			alt="gradient"
-		/>
+	<div
+		class="h-[calc(100vh-156px)] lg:h-[calc(100vh-156px)] flex items-center"
+	>
+		<!-- <img -->
+		<!-- 	class="absolute top-0 right-0 -z-10 opacity-50" -->
+		<!-- 	src="/gradient.png" -->
+		<!-- 	alt="gradient" -->
+		<!-- /> -->
 
-		<img
-			class="absolute bottom-0 right-[25%] -z-10"
-			src="/gradient.png"
-			alt="gradient"
-		/>
+		<!-- <img -->
+		<!-- 	class="absolute bottom-0 right-[25%] -z-10" -->
+		<!-- 	src="/gradient.png" -->
+		<!-- 	alt="gradient" -->
+		<!-- /> -->
 		<div
-			class="h-0 w-120 absolute right-0 top-[20%] shadow-[0_0_700px_15px_white] rotate-130"
+			class="h-0 w-120 absolute right-0 top-[20%] shadow-[0_0_700px_15px_var(--primary)] rotate-130"
 		>
 		</div>
-		<div
-			class="h-0 w-120 absolute bottom-56 right-[25%] shadow-[0_0_400px_30px_#1100F8] rotate-140"
-		>
-		</div>
-
-		<!-- <spline-viewer -->
-		<!-- 	class="absolute inset-0" -->
-		<!-- 	loading-anim-type="spinner-big-light" -->
-		<!-- 	url="https://prod.spline.design/iMSUF9MZcV2mm9gU/scene.splinecode" -->
-		<!-- ></spline-viewer> -->
-		<div class="h-fit max-w-180 px-2 md:px-8">
-			<!-- <HeroText client:load /> -->
-		</div>
-		<!-- <div class="w-40 h-10 absolute bottom-4 right-5 bg-black z-50"> -->
+		<!-- <div -->
+		<!-- 	class="h-0 w-120 absolute bottom-56 right-[25%] shadow-[0_0_400px_30px_#1e66f5] rotate-140" -->
+		<!-- > -->
 		<!-- </div> -->
+
+		<spline-viewer
+			class="absolute inset-0"
+			loading-anim-type="spinner-big-light"
+			url="https://prod.spline.design/iMSUF9MZcV2mm9gU/scene.splinecode"
+		></spline-viewer>
+
+		<div class="max-w-152 p-4 z-10 absolute bottom-16 lg:static">
+			<p
+				class="text-3xl lg:text-5xl font-semibold tracking-tight"
+			>
+				Hey — I’m <span transition:name="mustafa"
+					>Mustafa</span
+				>
+			</p>
+
+			<p
+				class="text-xl lg:text-3xl mt-1 lg:mt-4 leading-snug text-text-muted"
+			>
+				I build websites and share what I learn along
+				the way.
+			</p>
+
+			<a
+				href="/about"
+				class="group mt-2 lg:mt-6 inline-flex items-center gap-1
+				   text-sm font-medium
+				   text-text-muted
+				   hover:text-primary
+				   transition-colors duration-150"
+			>
+				More about me
+				<Icon
+					name="lucide:arrow-right"
+					class="w-4 h-4 transition-transform duration-150 group-hover:translate-x-0.5"
+				/>
+			</a>
+		</div>
+
+		<div class="w-40 h-10 absolute bottom-4 right-5 bg-bg z-50">
+		</div>
 	</div>
 
-	<!-- <script -->
-	<!-- 	is:inline -->
-	<!-- 	type="module" -->
-	<!-- 	src="https://unpkg.com/@splinetool/viewer@1.12.6/build/spline-viewer.js" -->
-	<!-- ></script> -->
+	<script
+		is:inline
+		type="module"
+		src="https://unpkg.com/@splinetool/viewer@1.12.6/build/spline-viewer.js"
+	></script>
 </Layout>
