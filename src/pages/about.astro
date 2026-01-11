@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Prose from "../components/Prose.astro";
+import Highlight from "../components/Highlight.astro";
 import { Icon } from "astro-icon/components";
 ---
 
@@ -18,7 +19,7 @@ import { Icon } from "astro-icon/components";
 			/>
 		</div>
 
-		<div class="max-w-[600px]">
+		<div class="max-w-[500px]">
 			<Prose>
 				<div>
 					<span
@@ -38,31 +39,38 @@ import { Icon } from "astro-icon/components";
 						</span>
 					</div>
 				</div>
+
 				<p>
-					I am a Web Developer focused on <span
-						class="text-primary font-semibold"
-						>Frontend Development.</span
-					><br />
-					I mainly work with <span
-						class="text-primary font-semibold"
-						>React</span
-					>, <span
-						class="text-primary font-semibold"
-						>Astro</span
-					><br />
-					I use <span
-						class="text-primary font-semibold"
-						>Arch</span
-					> (btw) with <span
-						class="text-primary font-semibold"
-						>Hyprland</span
-					> as my daily driver,<br />
-					and I code in <span
-						class="text-primary font-semibold"
-						>Neovim</span
+					I’m a Web Developer with a focus on <Highlight
+						>Frontend Development</Highlight
 					>.
 					<br />
+					I work mainly with <Highlight
+						>React</Highlight
+					> and <Highlight>Astro</Highlight>, and
+					use
+					<Highlight>Node.js</Highlight> and <Highlight
+						>Laravel</Highlight
+					> on the backend.
+					<br />
+					I daily-drive <Highlight>Arch</Highlight
+					> (btw) with <Highlight
+						>Hyprland</Highlight
+					>, and code in <Highlight
+						>Neovim</Highlight
+					>.
+					<br />
+					I’m currently into <Highlight
+						>data structures and algorithms</Highlight
+					>.
+					<br />
+					Outside of coding, I play <Highlight
+						>football</Highlight
+					> and <Highlight>chess</Highlight>, and
+					tweak my
+					<Highlight>dev setup</Highlight>.
 				</p>
+
 				<h3>Connect:</h3>
 				<div class="not-prose text-text flex gap-4">
 					<div
@@ -94,12 +102,12 @@ import { Icon } from "astro-icon/components";
 						>
 						<a
 							class="p-1 font-medium duration-150 hover:text-primary flex gap-1 items-center"
-							href="mailto:hi@itsmustafa.dev"
+							href="mailto:mustafaarghandiwal2000@gmail.com"
 						>
 							<Icon
 								name="lucide:mail"
 							/>
-							hi@itsmustafa.dev
+							mustafaarghandiwal2000@gmail.com
 						</a>
 					</div>
 				</div>
