@@ -1,20 +1,15 @@
 ---
 const currentPath = Astro.url.pathname;
-let segments = currentPath.split("/");
-let breadCrumbs = [];
-// home path always gives ["", ""], because of "/".split("/"), so handling that here.
-if (segments.length === 2 && segments[0] === "" && segments[1] === "") {
-	breadCrumbs.push({ text: "～", href: "/" });
-} else {
-	segments.forEach((segment, index) => {
-		if (segment === "") {
-			breadCrumbs.push({ text: "～", href: "/" });
-		} else {
-			const href = "/" +  segments.slice(1, index + 1).join("/");
-			breadCrumbs.push({ text: segment, href: href });
-		}
-	});
-}
+
+// remove the empty ones ""
+let segments = currentPath.split("/").filter(Boolean);
+
+let breadCrumbs = [{ text: "～", href: "/" }];
+
+segments.forEach((segment, index) => {
+	const href = "/" + segments.slice(0, index + 1).join("/");
+	breadCrumbs.push({ text: segment, href: href });
+});
 ---
 
 {
