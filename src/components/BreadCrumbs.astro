@@ -1,14 +1,16 @@
 ---
+import { Icon } from "astro-icon/components";
+
 const currentPath = Astro.url.pathname;
 
 // remove the empty ones ""
 let segments = currentPath.split("/").filter(Boolean);
 
-let breadCrumbs = [{ text: "～", href: "/" }];
+let breadCrumbs = [{ text: "～", href: "/", isHome: true }];
 
 segments.forEach((segment, index) => {
 	const href = "/" + segments.slice(0, index + 1).join("/");
-	breadCrumbs.push({ text: segment, href: href });
+	breadCrumbs.push({ text: segment, href: href, isHome: false });
 });
 ---
 
@@ -16,13 +18,13 @@ segments.forEach((segment, index) => {
 breadCrumbs.map((crumb, index) => {
 	if(index + 1 === breadCrumbs.length) {
 		return (
-		<span class="cursor-default">{crumb.text}</span>
+		<span class="cursor-default">{crumb.isHome ? <Icon name="lucide:house" /> :crumb.text}</span>
 		<span class="cursor-default">/</span>
 		)
 	}
 		return (
 			<a class="hover:text-primary duration-75" href={crumb.href}>
-				{crumb.text}
+	{crumb.isHome ? <Icon name="lucide:house" /> :crumb.text}
 			</a>
 			<span class="cursor-default">/</span>
 		);
