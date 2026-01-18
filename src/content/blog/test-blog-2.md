@@ -3,7 +3,7 @@ title: 'Test Blog 2'
 description: 'This is the description for the second test blog'
 pubDate: 'Dec 22 2025'
 tags: ['test', 'webdev' ]
-image: '../../assets/arcane2.jpg'
+image: '../../assets/arcane.jpg'
 ---
 
 # Some Test Markdown

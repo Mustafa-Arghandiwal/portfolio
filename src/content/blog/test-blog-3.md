@@ -7,7 +7,7 @@ tags:
   - astro
   - workflow
   - frontend
-image: '../../assets/coffee-shop.jpg'
+image: '../../assets/arcane.jpg'
 ---
 
 ## Why Astro?
