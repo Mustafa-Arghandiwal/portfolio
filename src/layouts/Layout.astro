@@ -4,12 +4,17 @@ import { Icon } from "astro-icon/components";
 import { ClientRouter } from "astro:transitions";
 import BreadCrumbs from "../components/BreadCrumbs.astro";
 const { pageTitle } = Astro.props;
-console.log(pageTitle);
 ---
 
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
+		<!-- Cloudflare Web Analytics -->
+		<script
+			defer
+			src="https://static.cloudflareinsights.com/beacon.min.js"
+			data-cf-beacon='{"token": "9d99f5991d51403fa0c206f1491e5855"}'
+		></script><!-- End Cloudflare Web Analytics -->
 		<script is:inline>
 			const savedTheme =
 				localStorage.getItem("theme") || "mocha";
