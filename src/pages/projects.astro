@@ -4,7 +4,10 @@ import ProjectCard from "../components/ProjectCard.astro";
 ---
 
 <Layout pageTitle="Projects">
-	<h1 class="text-center text-5xl md:text-6xl">My Projects</h1>
+	<h1 class="text-center text-5xl md:text-6xl mt-8">Projects</h1>
+	<p class="mx-auto text-center mt-6 text-lg text-text-muted max-w-96">
+		Some of my work, built while learning
+	</p>
 	<section
 		class="max-w-[1200px] min-h-[calc(70vh)] mx-auto grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-12 my-12"
 	>
@@ -29,6 +32,23 @@ import ProjectCard from "../components/ProjectCard.astro";
 				</li>
 				<li>One click job applications</li>
 				<li>SPA experience</li>
+			</ul>
+		</ProjectCard>
+		<ProjectCard
+			title="Portfolio"
+			tags={["astro", "typescript"]}
+			image="/projects/portfolio.png"
+			github="https://github.com/Mustafa-Arghandiwal/portfolio"
+			live="https://arghandiwal.dev"
+		>
+			<p>
+				My portfolio and blog website showcasing
+				projects and posts.
+			</p>
+			<ul>
+				<li>Smooth, minimal, responsive design</li>
+				<li>Multiple themes</li>
+				<li>Blogging feature</li>
 			</ul>
 		</ProjectCard>
 		<ProjectCard
