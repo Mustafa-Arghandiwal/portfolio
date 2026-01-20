@@ -19,7 +19,7 @@ It was kinda like when you speak English very well in your head, but when you ac
 
 After that, I spent some time properly learning about Tree-sitter. A few days later, we talked about Neovim again. This time, my explanation of Tree-sitter was much better. Still not good enough to make him switch though, but definitely better than before.
 
-I realized that when you learn something with the goal of explaining it to others, you end up understanding it much more deeply. **That’s why I started this blog.**
+I realized that when you learn something with the goal of explaining it to others, you end up understanding it much more deeply. That’s why I built this website and **started this blog.**
 
 I’m not going to just slap everything onto this blog, only things I find interesting, useful, or worth sharing.
 
