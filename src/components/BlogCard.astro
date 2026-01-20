@@ -44,11 +44,14 @@ const {blog, index} = Astro.props
 
 			<div class="px-2 mt-2">
 
-		<div class="flex gap-x-4 gap-y-2 items-center flex-wrap">
-		<Icon name="lucide:tag" class="text-text" />
-		<TagChips tags={blog.data.tags} />
+		{blog.data.tags.length !== 0 && 
+			<div class="flex gap-x-4 gap-y-2 items-center flex-wrap">
+			<Icon name="lucide:tag" class="text-text" />
+			<TagChips tags={blog.data.tags} />
 			
 		</div>
+		}
+		
 				
 		<a href={`/blog/${blog.id}`} transition:name={blog.data.title} class=`${index===0 && "sm:text-4xl"}  text-2xl mt-1 line-clamp-3 `>
 						{blog.data.title}
