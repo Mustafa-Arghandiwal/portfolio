@@ -1,6 +1,6 @@
 ---
 title: "Why am I starting this blog?"
-description: "Why bother starting a blog and writing?"
+description: "Why bother starting a blog and writing stuff?"
 pubDate: "Jan 19 2026"
 tags: ["meta"]
 image: "../../assets/keyboard.png"
