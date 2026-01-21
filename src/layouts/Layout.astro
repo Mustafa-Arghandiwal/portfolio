@@ -9,6 +9,7 @@ const { pageTitle } = Astro.props;
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
+		<link rel="sitemap" href="/sitemap-index.xml" />
 		<!-- Cloudflare Web Analytics -->
 		<script
 			defer
@@ -20,7 +21,11 @@ const { pageTitle } = Astro.props;
 				localStorage.getItem("theme") || "mocha";
 			document.documentElement.dataset.theme = savedTheme;
 		</script>
-		<link rel="icon" type="image/svg+xml" href="/profile-black-hoodie-min.png" />
+		<link
+			rel="icon"
+			type="image/svg+xml"
+			href="/profile-black-hoodie-min.png"
+		/>
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>
@@ -30,6 +35,10 @@ const { pageTitle } = Astro.props;
 					: pageTitle + " | Mustafa"
 			}
 		</title>
+		<meta
+			name="description"
+			content="Mustafa Arghandiwal is a web developer building modern web applications and sharing thoughts on development, Linux, Neovim, and developer workflows."
+		/>
 		<ClientRouter />
 	</head>
 	<body class="bg-bg text-text relative font-expo">

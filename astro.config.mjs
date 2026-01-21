@@ -6,6 +6,8 @@ import tailwindcss from "@tailwindcss/vite";
 import icon from "astro-icon";
 import remarkGithubAlerts from "remark-github-alerts";
 
+import sitemap from "@astrojs/sitemap";
+
 // https://astro.build/config
 export default defineConfig({
 	vite: {
@@ -16,7 +18,8 @@ export default defineConfig({
 			]
 		}
 	},
-	integrations: [icon()],
+	site: 'https://arghandiwal.dev',
+	integrations: [icon(), sitemap()],
 	markdown: {
 		remarkPlugins: [remarkGithubAlerts],
 		shikiConfig: {
