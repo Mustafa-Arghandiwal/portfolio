@@ -18,8 +18,7 @@ segments.forEach((segment, index) => {
 breadCrumbs.map((crumb, index) => {
 	if(index + 1 === breadCrumbs.length) {
 		return (
-		<span class="cursor-default">{crumb.isHome ? <Icon name="lucide:house" /> :crumb.text}</span>
-		<span class="cursor-default">/</span>
+		<span class="cursor-default line-clamp-1">{crumb.isHome ? <Icon name="lucide:house" /> :crumb.text}&nbsp; /</span>
 		)
 	}
 		return (
@@ -31,4 +30,4 @@ breadCrumbs.map((crumb, index) => {
 	})
 }
 
-<div class="w-[1ch] h-4 bg-primary/70 animate-pulse"></div>
+<div class="w-[1ch] h-4 bg-primary/70 animate-pulse shrink-0"></div>

@@ -21,11 +21,7 @@ const { pageTitle } = Astro.props;
 				localStorage.getItem("theme") || "mocha";
 			document.documentElement.dataset.theme = savedTheme;
 		</script>
-		<link
-			rel="icon"
-			type="image/png"
-			href="/favicon.png"
-		/>
+		<link rel="icon" type="image/png" href="/favicon.png" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>
@@ -79,10 +75,10 @@ const { pageTitle } = Astro.props;
 			class="text-text sticky top-0 z-10 px-4 py-1.5 backdrop-blur-xs bg-linear-to-b from-bg/90 to-bg/50"
 		>
 			<div
-				class="flex items-center justify-between max-w-[620px] 2xl:max-w-[780px] mx-auto"
+				class="flex items-center justify-between gap-4 max-w-[620px] 2xl:max-w-[780px] mx-auto"
 			>
 				<div
-					class="font-semibold flex gap-1.5 flex-wrap items-center"
+					class="font-semibold flex gap-1.5 items-center"
 				>
 					<BreadCrumbs />
 				</div>
@@ -116,7 +112,7 @@ const { pageTitle } = Astro.props;
 
 						<div
 							id="theme-menu"
-							class="*:min-w-28 *:py-0.5 *:cursor-pointer *:rounded-sm *:hover:ring-2 *: *:ring-primary absolute right-0 top-8 p-2 rounded-md text-sm hidden flex-col gap-2 font-semibold bg-bg-card/90 z-50"
+							class="*:min-w-28 *:py-1 *:cursor-pointer *:rounded-sm *:hover:ring-2 *: *:ring-primary absolute right-0 top-8 p-2 rounded-md text-sm hidden flex-col gap-2 font-semibold bg-bg-card/90 z-50"
 						>
 							<button
 								class="bg-[#eff1f5] text-[#4c4f69] theme"
@@ -170,17 +166,17 @@ const { pageTitle } = Astro.props;
 							class="absolute py-2 rounded-md top-8 right-0 text-sm hidden gap-2 flex-col font-semibold bg-bg-card/90 z-50"
 						>
 							<a
-								class="cursor-pointer hover:text-primary duration-75 px-4"
+								class="cursor-pointer hover:text-primary duration-75 py-2 px-4"
 								href="/projects"
 								>Projects</a
 							>
 							<a
-								class="cursor-pointer hover:text-primary duration-75 px-4"
+								class="cursor-pointer hover:text-primary duration-75 py-2 px-4"
 								href="/blog"
 								>Blog</a
 							>
 							<a
-								class="cursor-pointer hover:text-primary duration-75 px-4"
+								class="cursor-pointer hover:text-primary duration-75 py-2 px-4"
 								href="/about"
 								>About</a
 							>
