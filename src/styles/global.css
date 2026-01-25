@@ -293,16 +293,17 @@ code .line::before {
 
 .copy-code {
 	position: absolute;
-	top: 0;
-	right: 0;
-	background-color: #3730a3;
+	top: 6px;
+	right: 6px;
+	background-color: var(--bg-muted);
+	color: var(--text);
 	width: 5rem;
 	padding: 0.25rem 0.5rem;
 	font-size: 0.75rem;
 	cursor: pointer;
-	border-radius: 4px;
+	border-radius: 8px;
 }
 
-.copy-code:hover {
-	background-color: #312e81;
-}
+/* .copy-code:hover { */
+/* 	background-color: #312e81; */
+/* } */
