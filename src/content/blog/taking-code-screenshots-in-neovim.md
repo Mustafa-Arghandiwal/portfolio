@@ -117,6 +117,7 @@ To work around this, I made nvim-silicon treat `.astro` files as HTML:
   },
 ```
 
-## Conclusion
-
-With **nvim-silicon**, taking code screenshots in Neovim is fast, simple, and fully keyboard-driven. Configure it once, and you can capture screenshots of your code directly in Neovim, without using a browser or mouse.
+### Credits
+Sources and references for this blog include:
+- <a href="https://github.com/michaelrommel/nvim-silicon" target="_blank" rel="noopener noreferrer">nvim-silicon GitHub repository</a>
+- <a href="https://youtu.be/ig_HLrssAYE?si=bV2L7YpL3um7qV8j" target="_blank" rel="noopener noreferrer">Create beautiful code screenshots in Neovim (Youtube)</a>
