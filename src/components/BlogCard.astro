@@ -17,7 +17,7 @@ const {blog, index} = Astro.props
 							transition:name={blog.id}
 							src={blog.data.image}
 							alt="blog image"
-					class=`rounded-md ${index===0 ? "max-h-56 sm:max-h-96" : "h-56"}  hover:scale-110 duration-500`
+					class=`rounded-md ${index===0 ? "max-h-56 sm:max-h-96" : "h-56"} object-cover w-full  hover:scale-110 duration-500`
 						/>
 				}
 						<div class="absolute w-full -bottom-10 group-hover:bottom-0 duration-300 h-10 text-white/70  backdrop-blur-xs  flex flex-wrap items-center justify-between px-4 text-sm font-semibold">
