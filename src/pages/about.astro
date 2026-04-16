@@ -6,124 +6,98 @@ import { Icon } from "astro-icon/components";
 ---
 
 <Layout pageTitle="About">
-	<div
-		class="flex gap-12 justify-center items-center min-h-[calc(100dvh-200px)] flex-col lg:flex-row"
-	>
-		<div
-			class="rounded-full w-52 lg:w-74 grid place-items-center overflow-hidden pt-4 pl-3 group"
-		>
-			<img
-				class="group-hover:scale-105 duration-300"
-				src="/profile-black-hoodie-min.png"
-				alt="profile image"
-			/>
-		</div>
+    <div
+        class="flex gap-12 justify-center items-center min-h-[calc(100dvh-200px)] flex-col lg:flex-row"
+    >
+        <div
+            class="rounded-full w-52 lg:w-74 grid place-items-center overflow-hidden pt-4 pl-3 group"
+        >
+            <img
+                class="group-hover:scale-105 duration-300"
+                src="/profile-black-hoodie-min.png"
+                alt="profile image"
+            />
+        </div>
 
-		<div class="max-w-[500px]">
-			<Prose>
-				<div>
-					<span
-						class="text-primary text-3xl block font-bold"
-					>
-						<span transition:name="mustafa"
-							>Mustafa</span
-						> Arghandiwal
-					</span>
-					<div class="flex items-center gap-2">
-						<Icon
-							name="lucide:map-pin"
-							class="w-5 h-5 text-primary"
-						/>
-						<span class="text-text">
-							Kabul, Afghanistan
-						</span>
-					</div>
-				</div>
+        <div class="max-w-[500px]">
+            <Prose>
+                <div>
+                    <span class="text-primary text-3xl block font-bold">
+                        <span transition:name="mustafa">Mustafa</span> Arghandiwal
+                    </span>
+                    <div class="flex items-center gap-2">
+                        <Icon
+                            name="lucide:map-pin"
+                            class="w-5 h-5 text-primary"
+                        />
+                        <span class="text-text"> Kabul, Afghanistan </span>
+                    </div>
+                </div>
 
-				<p>
-					I’m a <Highlight
-						>web developer</Highlight
-					>. <br />
-					I work mainly with <Highlight
-						>React</Highlight
-					> and <Highlight>Astro</Highlight>, and
-					use
-					<Highlight>Node.js</Highlight> and <Highlight
-						>Laravel</Highlight
-					> on the backend.
-					<br />
-					I daily-drive <Highlight>Arch</Highlight
-					> (btw) with <Highlight
-						>Hyprland</Highlight
-					>, and code in <Highlight
-						>Neovim</Highlight
-					>.
-					<br />
-					I'm working towards becoming a
-					<Highlight>software engineer</Highlight
-					>, so I'm currently diving into <Highlight
-						>data structures and algorithms</Highlight
-					>.
-					<br />
-					Outside of coding, I play <Highlight
-						>football</Highlight
-					> and <Highlight>chess</Highlight>, and
-					tweak my
-					<Highlight>dev setup</Highlight>.
-				</p>
+                <p>
+                    I’m a <Highlight>web developer</Highlight>. <br />
+                    I work mainly with <Highlight>React</Highlight> and <Highlight
+                        >Astro</Highlight
+                    >, and use
+                    <Highlight>Node.js</Highlight> and <Highlight
+                        >Laravel</Highlight
+                    > on the backend.
+                    <br />
+                    I daily-drive <Highlight>Arch</Highlight> (btw) with <Highlight
+                        >Hyprland</Highlight
+                    >, and code in <Highlight>Neovim</Highlight>.
+                    <br />
+                    I'm working towards becoming a
+                    <Highlight>software engineer</Highlight>, so I'm currently
+                    diving into <Highlight
+                        >data structures and algorithms</Highlight
+                    >.
+                    <br />
+                    Outside of coding, I play <Highlight>football</Highlight> and
+                    <Highlight>chess</Highlight>, and tweak my
+                    <Highlight>dev setup</Highlight>.
+                </p>
 
-				<h3>Connect:</h3>
-				<div class="not-prose text-text flex gap-4">
-					<div
-						class="flex items-center gap-x-4 flex-wrap"
-					>
-						<a
-							class="p-1 duration-150 hover:text-primary"
-							href="https://github.com/Mustafa-Arghandiwal"
-							target="_blank"
-						>
-							<Icon
-								name="lucide:github"
-							/>
-						</a>
-						<span
-							class="text-text-faint select-none"
-							>|</span
-						>
-						<a
-							class="p-1 duration-150 hover:text-primary"
-							href="https://x.com/_its_mustafa"
-							target="_blank"
-						>
-							<Icon name="twitter" />
-						</a>
-						<span
-							class="text-text-faint select-none"
-							>|</span
-						>
-						<a
-							class="p-1 font-medium duration-150 hover:text-primary flex gap-1 items-center"
-							href="mailto:hi@arghandiwal.dev"
-						>
-							<Icon
-								name="lucide:mail"
-							/>
-							hi@arghandiwal.dev
-						</a>
-					</div>
-				</div>
-			</Prose>
-		</div>
-	</div>
+                <h3>Connect:</h3>
+                <div class="not-prose text-text flex gap-4">
+                    <div class="flex items-center gap-x-4 flex-wrap">
+                        <a
+                            class="p-1 duration-150 hover:text-primary"
+                            href="https://github.com/Mustafa-Arghandiwal"
+                            target="_blank"
+                        >
+                            <Icon name="lucide:github" />
+                        </a>
+                        <span class="text-text-faint select-none">|</span>
+                        <a
+                            class="p-1 duration-150 hover:text-primary"
+                            href="https://x.com/_its_mustafa"
+                            target="_blank"
+                        >
+                            <Icon name="twitter" />
+                        </a>
+                        <span class="text-text-faint select-none">|</span>
+                        <a
+                            class="p-1 font-medium duration-150 hover:text-primary flex gap-1 items-center"
+                            href="mailto:mustafa@arghandiwal.dev"
+                        >
+                            <Icon name="lucide:mail" />
+                            mustafa@arghandiwal.dev
+                        </a>
+                    </div>
+                </div>
+            </Prose>
+        </div>
+    </div>
 
-	<div class="mt-12">
-		<h1 class="text-3xl text-center">Days I Code</h1>
-		<div class="overflow-x-auto">
-			<img
-				src="http://ghchart.rshah.org/6f8faf/Mustafa-Arghandiwal"
-				alt="chart"
-				class="mt-8 h-38 min-w-[800px] mx-auto"
-			/>
-		</div>
-	</div>
+    <div class="mt-12">
+        <h1 class="text-3xl text-center">Days I Code</h1>
+        <div class="overflow-x-auto">
+            <img
+                src="http://ghchart.rshah.org/6f8faf/Mustafa-Arghandiwal"
+                alt="chart"
+                class="mt-8 h-38 min-w-[800px] mx-auto"
+            />
+        </div>
+    </div>
 </Layout>
