@@ -2,81 +2,75 @@
 import { Icon } from "astro-icon/components";
 import TagChips from "./TagChips.astro";
 interface Props {
-	title: string;
-	tags: string[];
-	image: string;
-	github?: string;
-	live?: string;
+    title: string;
+    tags: string[];
+    image: string;
+    github?: string;
+    live?: string;
 }
 const { title, tags, image, github, live } = Astro.props;
 ---
 
 <div class="border border-text/10 p-5 rounded-xl flex flex-col">
-	<div class="rounded-md overflow-hidden max-h-72 h-full">
-		<img
-			class="object-cover w-full hover:scale-110 duration-300"
-			src={image}
-		/>
-	</div>
-	<div class="flex gap-4 flex-wrap items-center mt-4">
-		<h4 class="text-2xl">
-			{title}
-		</h4>
+    <div class="rounded-md overflow-hidden aspect-video">
+        <img
+            class="object-cover w-full h-full hover:scale-110 duration-300"
+            src={image}
+        />
+    </div>
+    <div class="flex gap-4 flex-wrap items-center mt-4">
+        <h4 class="text-2xl">
+            {title}
+        </h4>
 
-		<div class="flex gap-2 items-center">
-			{
-				github && (
-					<a
-						href={github}
-						target="_blank"
-						class="inline-flex items-center gap-1.5
+        <div class="flex gap-2 items-center">
+            {
+                github && (
+                    <a
+                        href={github}
+                        target="_blank"
+                        class="inline-flex items-center gap-1.5
 						px-2 py-0.5
 						rounded-sm
 						text-text-muted
 						border border-bg-overlay
 						hover:text-primary hover:border-primary
 						duration-150"
-					>
-						<Icon
-							name="lucide:github"
-							class="w-4 h-4"
-						/>
-						<span>Code</span>
-					</a>
-				)
-			}
+                    >
+                        <Icon name="lucide:github" class="w-4 h-4" />
+                        <span>Code</span>
+                    </a>
+                )
+            }
 
-			{
-				live && (
-					<a
-						href={live}
-						target="_blank"
-						class="inline-flex items-center gap-1.5
+            {
+                live && (
+                    <a
+                        href={live}
+                        target="_blank"
+                        class="inline-flex items-center gap-1.5
 						px-2 py-0.5
 						rounded-sm
 						text-text-muted
 						border border-bg-overlay
 						hover:text-primary hover:border-primary
 						duration-150"
-					>
-						<Icon
-							name="lucide:external-link"
-							class="w-4 h-4"
-						/>
-						<span>Live</span>
-					</a>
-				)
-			}
-		</div>
-	</div>
+                    >
+                        <Icon name="lucide:external-link" class="w-4 h-4" />
+                        <span>Live</span>
+                    </a>
+                )
+            }
+        </div>
+    </div>
 
-	<div
-		class="prose-sm sm:prose-base prose-invert mt-2 mb-4 prose-ul:list-disc [&_p]:opacity-80 [&_ul]:opacity-80"
-	>
-		<slot />
-	</div>
+    <div
+        class="prose-sm sm:prose-base prose-invert mt-2 mb-4 prose-ul:list-disc [&_p]:opacity-80 [&_ul]:opacity-80"
+    >
+        <slot />
+    </div>
 
-	<div class="mt-auto">
-		<TagChips tags={tags} />
-	</div>
+    <div class="mt-auto">
+        <TagChips tags={tags} />
+    </div>
 </div>
